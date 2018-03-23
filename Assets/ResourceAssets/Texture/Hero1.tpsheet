@@ -1,0 +1,58 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:4ae0f952cc3e04b4ad9b0bb23b05943c:a07062eeba9c01851d35847542a193ba:cbb2bf81bc3cdca219ebe3c0f44012da$
+#
+:format=40300
+:texture=Hero1.png
+:size=256x256
+:pivotpoints=enabled
+:borders=disabled
+
+Cast_run/Hero3_castRun_00;1;225;30;30; 0.5;0.5; 0;0;0;0
+Cast_run/Hero3_castRun_01;1;193;30;30; 0.5;0.5; 0;0;0;0
+Cast_run/Hero3_castRun_02;1;161;30;30; 0.5;0.5; 0;0;0;0
+Cast_run/Hero3_castRun_03;1;129;30;30; 0.5;0.5; 0;0;0;0
+Cast_run/Hero3_castRun_04;1;97;30;30; 0.5;0.5; 0;0;0;0
+Cast_run/Hero3_castRun_05;1;65;30;30; 0.5;0.5; 0;0;0;0
+Cast_run/Hero3_castRun_06;1;33;30;30; 0.5;0.5; 0;0;0;0
+Cast_run/Hero3_castRun_07;1;1;30;30; 0.5;0.5; 0;0;0;0
+Cast_stand/Hero3_castStand_00;33;225;30;30; 0.5;0.5; 0;0;0;0
+Cast_stand/Hero3_castStand_01;65;225;30;30; 0.5;0.5; 0;0;0;0
+Cast_stand/Hero3_castStand_02;97;225;30;30; 0.5;0.5; 0;0;0;0
+Cast_stand/Hero3_castStand_03;129;225;30;30; 0.5;0.5; 0;0;0;0
+Cast_stand/Hero3_castStand_04;161;225;30;30; 0.5;0.5; 0;0;0;0
+Cast_stand/Hero3_castStand_05;193;225;30;30; 0.5;0.5; 0;0;0;0
+Cast_stand/Hero3_castStand_06;225;225;30;30; 0.5;0.5; 0;0;0;0
+Cast_stand/Hero3_castStand_07;33;193;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_00;33;161;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_01;33;129;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_02;33;97;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_03;33;65;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_04;33;33;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_05;33;1;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_06;65;193;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_07;97;193;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_08;129;193;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_09;161;193;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_10;193;193;30;30; 0.5;0.5; 0;0;0;0
+Dead/Hero3_dead_11;225;193;30;30; 0.5;0.5; 0;0;0;0
+Idle/Hero3_idle_00;65;161;30;30; 0.5;0.5; 0;0;0;0
+Idle/Hero3_idle_01;65;129;30;30; 0.5;0.5; 0;0;0;0
+Idle/Hero3_idle_02;65;97;30;30; 0.5;0.5; 0;0;0;0
+Idle/Hero3_idle_03;65;65;30;30; 0.5;0.5; 0;0;0;0
+Idle/Hero3_idle_04;65;33;30;30; 0.5;0.5; 0;0;0;0
+Idle/Hero3_idle_05;65;1;30;30; 0.5;0.5; 0;0;0;0
+Idle/Hero3_idle_06;97;161;30;30; 0.5;0.5; 0;0;0;0
+Idle/Hero3_idle_07;129;161;30;30; 0.5;0.5; 0;0;0;0
+Run/Hero3_run_00;161;161;30;30; 0.5;0.5; 0;0;0;0
+Run/Hero3_run_01;193;161;30;30; 0.5;0.5; 0;0;0;0
+Run/Hero3_run_02;225;161;30;30; 0.5;0.5; 0;0;0;0
+Run/Hero3_run_03;97;129;30;30; 0.5;0.5; 0;0;0;0
+Run/Hero3_run_04;97;97;30;30; 0.5;0.5; 0;0;0;0
+Run/Hero3_run_05;97;65;30;30; 0.5;0.5; 0;0;0;0
+Run/Hero3_run_06;97;33;30;30; 0.5;0.5; 0;0;0;0
+Run/Hero3_run_07;97;1;30;30; 0.5;0.5; 0;0;0;0

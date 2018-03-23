@@ -1,0 +1,456 @@
+fileFormatVersion: 2
+guid: a30814e379e17204fb3229fe7af659b9
+timeCreated: 1521106333
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Attack-SlimeSorcerer_Attack_00
+    21300002: Attack-SlimeSorcerer_Attack_01
+    21300004: Attack-SlimeSorcerer_Attack_02
+    21300006: Attack-SlimeSorcerer_Attack_03
+    21300008: Attack-SlimeSorcerer_Attack_04
+    21300010: Attack-SlimeSorcerer_Attack_05
+    21300012: Death-SlimeSorcerer_Death_00
+    21300014: Death-SlimeSorcerer_Death_01
+    21300016: Death-SlimeSorcerer_Death_02
+    21300018: Death-SlimeSorcerer_Death_03
+    21300020: Death-SlimeSorcerer_Death_04
+    21300022: Death-SlimeSorcerer_Death_05
+    21300024: Death-SlimeSorcerer_Death_06
+    21300026: Death-SlimeSorcerer_Death_07
+    21300028: Idle-SlimeSorcerer_Idle_00
+    21300030: Idle-SlimeSorcerer_Idle_01
+    21300032: Idle-SlimeSorcerer_Idle_02
+    21300034: Idle-SlimeSorcerer_Idle_03
+    21300036: Idle-SlimeSorcerer_Idle_04
+    21300038: Idle-SlimeSorcerer_Idle_05
+    21300040: Run-SlimeSorcerer_Run_00
+    21300042: Run-SlimeSorcerer_Run_01
+    21300044: Run-SlimeSorcerer_Run_02
+    21300046: Run-SlimeSorcerer_Run_03
+    21300048: Run-SlimeSorcerer_Run_04
+    21300050: Run-SlimeSorcerer_Run_05
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: 47
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Attack-SlimeSorcerer_Attack_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 216
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Attack-SlimeSorcerer_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 216
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Attack-SlimeSorcerer_Attack_02
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 216
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Attack-SlimeSorcerer_Attack_03
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 216
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Attack-SlimeSorcerer_Attack_04
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 216
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Attack-SlimeSorcerer_Attack_05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 175
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Death-SlimeSorcerer_Death_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 134
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Death-SlimeSorcerer_Death_01
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 93
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Death-SlimeSorcerer_Death_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 52
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Death-SlimeSorcerer_Death_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 11
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Death-SlimeSorcerer_Death_04
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 175
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Death-SlimeSorcerer_Death_05
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 175
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Death-SlimeSorcerer_Death_06
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 175
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Death-SlimeSorcerer_Death_07
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 175
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-SlimeSorcerer_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 134
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-SlimeSorcerer_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 93
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-SlimeSorcerer_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 52
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-SlimeSorcerer_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 11
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-SlimeSorcerer_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 134
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-SlimeSorcerer_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 134
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-SlimeSorcerer_Run_00
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 134
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-SlimeSorcerer_Run_01
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 93
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-SlimeSorcerer_Run_02
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 52
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-SlimeSorcerer_Run_03
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 11
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-SlimeSorcerer_Run_04
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 93
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-SlimeSorcerer_Run_05
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 93
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: resourceassets/alldependencies/assets/resourceassets/texture/slimesorcerer.png
+  assetBundleVariant: 

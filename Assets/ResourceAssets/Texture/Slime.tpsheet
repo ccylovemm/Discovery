@@ -1,0 +1,35 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:c39704e18e29e978d80af7813bc5d942:675557f288ab2bd9dc77f38c6f26f806:0c126199eb007adb09e09d710ba45ea5$
+#
+:format=40300
+:texture=Slime.png
+:size=128x128
+:pivotpoints=enabled
+:borders=disabled
+
+Attack/Slime_Attack_00;1;107;23;20; 0.5;0.5; 0;0;0;0
+Attack/Slime_Attack_01;26;107;23;20; 0.5;0.5; 0;0;0;0
+Attack/Slime_Attack_02;51;107;23;20; 0.5;0.5; 0;0;0;0
+Attack/Slime_Attack_03;76;107;23;20; 0.5;0.5; 0;0;0;0
+Attack/Slime_Attack_04;101;107;23;20; 0.5;0.5; 0;0;0;0
+Death/Slime_Death_00;1;85;23;20; 0.5;0.5; 0;0;0;0
+Death/Slime_Death_01;1;63;23;20; 0.5;0.5; 0;0;0;0
+Death/Slime_Death_02;1;41;23;20; 0.5;0.5; 0;0;0;0
+Death/Slime_Death_03;1;19;23;20; 0.5;0.5; 0;0;0;0
+Death/Slime_Death_04;26;85;23;20; 0.5;0.5; 0;0;0;0
+Death/Slime_Death_05;51;85;23;20; 0.5;0.5; 0;0;0;0
+Idle/Slime_Idle_00;76;85;23;20; 0.5;0.5; 0;0;0;0
+Idle/Slime_Idle_01;101;85;23;20; 0.5;0.5; 0;0;0;0
+Idle/Slime_Idle_02;26;63;23;20; 0.5;0.5; 0;0;0;0
+Idle/Slime_Idle_03;26;41;23;20; 0.5;0.5; 0;0;0;0
+Idle/Slime_Idle_04;26;19;23;20; 0.5;0.5; 0;0;0;0
+Run/Slime_Run_00;51;63;23;20; 0.5;0.5; 0;0;0;0
+Run/Slime_Run_01;76;63;23;20; 0.5;0.5; 0;0;0;0
+Run/Slime_Run_02;101;63;23;20; 0.5;0.5; 0;0;0;0
+Run/Slime_Run_03;76;63;23;20; 0.5;0.5; 0;0;0;0
+Run/Slime_Run_04;51;41;23;20; 0.5;0.5; 0;0;0;0

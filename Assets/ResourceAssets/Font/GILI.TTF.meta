@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 92152eef41a957344b65bf2d61ffe7fa
+timeCreated: 1521609197
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Gill Sans MT
+  fontNames:
+  - Gill Sans MT
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: resourceassets/alldependencies/assets/resourceassets/font/gili.ttf
+  assetBundleVariant: 

@@ -1,0 +1,54 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:2a882a52743d2482709cc54888291be3:4ee29670ad8ea844e7b2df861a2c8a8b:5f469213d689776342d704e2cd5158d3$
+#
+:format=40300
+:texture=GoblinShields.png
+:size=256x512
+:pivotpoints=enabled
+:borders=disabled
+
+Attack1/GoblinShields_Attack1_00;1;471;58;40; 0.5;0.5; 0;0;0;0
+Attack1/GoblinShields_Attack1_01;61;471;58;40; 0.5;0.5; 0;0;0;0
+Attack1/GoblinShields_Attack1_02;121;471;58;40; 0.5;0.5; 0;0;0;0
+Attack1/GoblinShields_Attack1_03;181;471;58;40; 0.5;0.5; 0;0;0;0
+Attack1/GoblinShields_Attack1_04;1;429;58;40; 0.5;0.5; 0;0;0;0
+Attack1/GoblinShields_Attack1_05;61;429;58;40; 0.5;0.5; 0;0;0;0
+AttackReady/GoblinShields_AttackReady_00;121;429;58;40; 0.5;0.5; 0;0;0;0
+AttackReady/GoblinShields_AttackReady_01;181;429;58;40; 0.5;0.5; 0;0;0;0
+AttackReady/GoblinShields_AttackReady_02;1;387;58;40; 0.5;0.5; 0;0;0;0
+AttackReady/GoblinShields_AttackReady_03;61;387;58;40; 0.5;0.5; 0;0;0;0
+Death/GoblinShields_Death_00;121;387;58;40; 0.5;0.5; 0;0;0;0
+Death/GoblinShields_Death_01;181;387;58;40; 0.5;0.5; 0;0;0;0
+Death/GoblinShields_Death_02;1;345;58;40; 0.5;0.5; 0;0;0;0
+Death/GoblinShields_Death_03;61;345;58;40; 0.5;0.5; 0;0;0;0
+Death/GoblinShields_Death_04;121;345;58;40; 0.5;0.5; 0;0;0;0
+Death/GoblinShields_Death_05;181;345;58;40; 0.5;0.5; 0;0;0;0
+Dizzy/GoblinShields_Dizzy_00;1;303;58;40; 0.5;0.5; 0;0;0;0
+Dizzy/GoblinShields_Dizzy_01;61;303;58;40; 0.5;0.5; 0;0;0;0
+Dizzy/GoblinShields_Dizzy_02;121;303;58;40; 0.5;0.5; 0;0;0;0
+Dizzy/GoblinShields_Dizzy_03;181;303;58;40; 0.5;0.5; 0;0;0;0
+Dizzy/GoblinShields_Dizzy_04;1;261;58;40; 0.5;0.5; 0;0;0;0
+Dizzy/GoblinShields_Dizzy_05;61;261;58;40; 0.5;0.5; 0;0;0;0
+FastRun/GoblinShields_FastRun_00;121;261;58;40; 0.5;0.5; 0;0;0;0
+FastRun/GoblinShields_FastRun_01;181;261;58;40; 0.5;0.5; 0;0;0;0
+FastRun/GoblinShields_FastRun_02;1;219;58;40; 0.5;0.5; 0;0;0;0
+FastRun/GoblinShields_FastRun_03;181;261;58;40; 0.5;0.5; 0;0;0;0
+Hold/GoblinShields_Hold_00;61;219;58;40; 0.5;0.5; 0;0;0;0
+Hold/GoblinShields_Hold_01;121;219;58;40; 0.5;0.5; 0;0;0;0
+Idle/GoblinShields_Idle_00;121;429;58;40; 0.5;0.5; 0;0;0;0
+Idle/GoblinShields_Idle_01;181;219;58;40; 0.5;0.5; 0;0;0;0
+Idle/GoblinShields_Idle_02;1;177;58;40; 0.5;0.5; 0;0;0;0
+Idle/GoblinShields_Idle_03;121;429;58;40; 0.5;0.5; 0;0;0;0
+Idle/GoblinShields_Idle_04;1;135;58;40; 0.5;0.5; 0;0;0;0
+Idle/GoblinShields_Idle_05;1;93;58;40; 0.5;0.5; 0;0;0;0
+Run/GoblinShields_Run_00;1;51;58;40; 0.5;0.5; 0;0;0;0
+Run/GoblinShields_Run_01;1;9;58;40; 0.5;0.5; 0;0;0;0
+Run/GoblinShields_Run_02;61;177;58;40; 0.5;0.5; 0;0;0;0
+Run/GoblinShields_Run_03;121;177;58;40; 0.5;0.5; 0;0;0;0
+Run/GoblinShields_Run_04;181;177;58;40; 0.5;0.5; 0;0;0;0
+Run/GoblinShields_Run_05;61;135;58;40; 0.5;0.5; 0;0;0;0

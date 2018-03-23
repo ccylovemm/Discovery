@@ -1,0 +1,56 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:f8063a5c12cf1cc95f647f77bdb5ff70:b583c3bc21bc4ab0cbe9eac5c8d2761a:b3e61136688ba05953b39bc8d06b3f53$
+#
+:format=40300
+:texture=Icon.png
+:size=512x1024
+:pivotpoints=enabled
+:borders=disabled
+
+btn_spell_1;1;579;106;106; 0.5;0.5; 0;0;0;0
+btn_spell_2;109;579;106;106; 0.5;0.5; 0;0;0;0
+btn_spell_3;265;485;106;106; 0.5;0.5; 0;0;0;0
+btn_spell_4;373;485;106;106; 0.5;0.5; 0;0;0;0
+btn_spell_5;1;471;106;106; 0.5;0.5; 0;0;0;0
+btn_spell_6;109;471;106;106; 0.5;0.5; 0;0;0;0
+btn_spell_7;217;377;106;106; 0.5;0.5; 0;0;0;0
+btn_spell_8;325;377;106;106; 0.5;0.5; 0;0;0;0
+btn_spellClick_1;273;917;106;106; 0.5;0.5; 0;0;0;0
+btn_spellClick_2;381;917;106;106; 0.5;0.5; 0;0;0;0
+btn_spellClick_3;273;809;106;106; 0.5;0.5; 0;0;0;0
+btn_spellClick_4;381;809;106;106; 0.5;0.5; 0;0;0;0
+btn_spellClick_5;273;701;106;106; 0.5;0.5; 0;0;0;0
+btn_spellClick_6;381;701;106;106; 0.5;0.5; 0;0;0;0
+btn_spellClick_7;273;593;106;106; 0.5;0.5; 0;0;0;0
+btn_spellClick_8;381;593;106;106; 0.5;0.5; 0;0;0;0
+HeadIcon1;1;687;270;336; 0.5;0.5; 0;0;0;0
+HeadIcon2;1;687;270;336; 0.5;0.5; 0;0;0;0
+HeadIcon3;1;687;270;336; 0.5;0.5; 0;0;0;0
+Icon_creditBlueUI;217;541;44;48; 0.5;0.5; 0;0;0;0
+Icon_creditGoldUI;217;495;44;44; 0.5;0.5; 0;0;0;0
+Icon_Element_1;489;866;15;18; 0.5;0.5; 0;0;0;0
+Icon_Element_2;489;790;11;18; 0.5;0.5; 0;0;0;0
+Icon_Element_3;489;954;17;16; 0.5;0.5; 0;0;0;0
+Icon_Element_4;489;810;13;17; 0.5;0.5; 0;0;0;0
+Icon_Element_5;489;991;17;17; 0.5;0.5; 0;0;0;0
+Icon_Element_6;489;847;15;17; 0.5;0.5; 0;0;0;0
+Icon_Element_7;489;1010;19;13; 0.5;0.5; 0;0;0;0
+Icon_Element_8;489;972;17;17; 0.5;0.5; 0;0;0;0
+Icon_largePotion;489;918;16;16; 0.5;0.5; 0;0;0;0
+Icon_midPotion;489;900;16;16; 0.5;0.5; 0;0;0;0
+Icon_Potion;489;936;16;16; 0.5;0.5; 0;0;0;0
+Icon_smallPotion;489;829;15;16; 0.5;0.5; 0;0;0;0
+Icon_temp;489;886;16;12; 0.5;0.5; 0;0;0;0
+SkillIcon1;433;412;71;71; 0.5;0.5; 0;0;0;0
+SkillIcon2;433;412;71;71; 0.5;0.5; 0;0;0;0
+SkillIcon3;433;412;71;71; 0.5;0.5; 0;0;0;0
+TalentIcon1;217;639;46;46; 0.5;0.5; 0;0;0;0
+TalentIcon2;217;591;46;46; 0.5;0.5; 0;0;0;0
+TalentIcon3;217;639;46;46; 0.5;0.5; 0;0;0;0
+TalentIcon4;217;639;46;46; 0.5;0.5; 0;0;0;0
+TalentIcon5;217;591;46;46; 0.5;0.5; 0;0;0;0

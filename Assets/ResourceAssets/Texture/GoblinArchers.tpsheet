@@ -1,0 +1,41 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:88945f26cb24fe01177f9b3cf15556e2:a80aa55189e3c7fcf1437a036f94014e:e094d9b08895b521b716b646f2aee9e3$
+#
+:format=40300
+:texture=GoblinArchers.png
+:size=256x256
+:pivotpoints=enabled
+:borders=disabled
+
+Arrow/Arrow;161;188;18;3; 0.5;0.5; 0;0;0;0
+Attack/GoblinArchers_Attack_00;1;225;38;30; 0.5;0.5; 0;0;0;0
+Attack/GoblinArchers_Attack_01;41;225;38;30; 0.5;0.5; 0;0;0;0
+Attack/GoblinArchers_Attack_02;81;225;38;30; 0.5;0.5; 0;0;0;0
+Attack/GoblinArchers_Attack_03;121;225;38;30; 0.5;0.5; 0;0;0;0
+Attack/GoblinArchers_Attack_04;161;225;38;30; 0.5;0.5; 0;0;0;0
+Attack/GoblinArchers_Attack_05;201;225;38;30; 0.5;0.5; 0;0;0;0
+Death/GoblinArchers_Death_00;1;193;38;30; 0.5;0.5; 0;0;0;0
+Death/GoblinArchers_Death_01;1;161;38;30; 0.5;0.5; 0;0;0;0
+Death/GoblinArchers_Death_02;1;129;38;30; 0.5;0.5; 0;0;0;0
+Death/GoblinArchers_Death_03;1;97;38;30; 0.5;0.5; 0;0;0;0
+Death/GoblinArchers_Death_04;1;65;38;30; 0.5;0.5; 0;0;0;0
+Death/GoblinArchers_Death_05;1;33;38;30; 0.5;0.5; 0;0;0;0
+Idle/GoblinArchers_Idle_00;1;1;38;30; 0.5;0.5; 0;0;0;0
+Idle/GoblinArchers_Idle_01;41;193;38;30; 0.5;0.5; 0;0;0;0
+Idle/GoblinArchers_Idle_02;81;193;38;30; 0.5;0.5; 0;0;0;0
+Idle/GoblinArchers_Idle_03;121;193;38;30; 0.5;0.5; 0;0;0;0
+Idle/GoblinArchers_Idle_04;161;193;38;30; 0.5;0.5; 0;0;0;0
+Idle/GoblinArchers_Idle_05;201;193;38;30; 0.5;0.5; 0;0;0;0
+Run/GoblinArchers_Run_00;41;161;38;30; 0.5;0.5; 0;0;0;0
+Run/GoblinArchers_Run_01;41;129;38;30; 0.5;0.5; 0;0;0;0
+Run/GoblinArchers_Run_02;41;97;38;30; 0.5;0.5; 0;0;0;0
+Run/GoblinArchers_Run_03;41;65;38;30; 0.5;0.5; 0;0;0;0
+Run/GoblinArchers_Run_04;41;33;38;30; 0.5;0.5; 0;0;0;0
+Run/GoblinArchers_Run_05;41;1;38;30; 0.5;0.5; 0;0;0;0
+Run/GoblinArchers_Run_06;81;161;38;30; 0.5;0.5; 0;0;0;0
+Run/GoblinArchers_Run_07;121;161;38;30; 0.5;0.5; 0;0;0;0

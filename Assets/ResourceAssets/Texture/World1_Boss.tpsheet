@@ -1,0 +1,53 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:67cae38426cb2af74810dccdc37fadc8:9e960c6afac65741201acab84ba2967c:b194017938d65865248112020489185d$
+#
+:format=40300
+:texture=World1_Boss.png
+:size=512x1024
+:pivotpoints=enabled
+:borders=disabled
+
+Attack/World1Boss_Attack_00;1;932;76;91; 0.5;0.5; 0;0;0;0
+Attack/World1Boss_Attack_01;79;932;76;91; 0.5;0.5; 0;0;0;0
+Attack/World1Boss_Attack_02;157;932;76;91; 0.5;0.5; 0;0;0;0
+Attack/World1Boss_Attack_03;235;932;76;91; 0.5;0.5; 0;0;0;0
+Death/World1Boss_Death_00;313;932;76;91; 0.5;0.5; 0;0;0;0
+Death/World1Boss_Death_01;391;932;76;91; 0.5;0.5; 0;0;0;0
+Death/World1Boss_Death_02;1;839;76;91; 0.5;0.5; 0;0;0;0
+Death/World1Boss_Death_03;79;839;76;91; 0.5;0.5; 0;0;0;0
+Diving/World1Boss_Diving_00;157;839;76;91; 0.5;0.5; 0;0;0;0
+Diving/World1Boss_Diving_01;235;839;76;91; 0.5;0.5; 0;0;0;0
+Diving/World1Boss_Diving_02;313;839;76;91; 0.5;0.5; 0;0;0;0
+Diving/World1Boss_Diving_03;391;839;76;91; 0.5;0.5; 0;0;0;0
+Diving/World1Boss_Diving_04;1;746;76;91; 0.5;0.5; 0;0;0;0
+Diving/World1Boss_Diving_05;79;746;76;91; 0.5;0.5; 0;0;0;0
+Dizzy/World1Boss_Dizzy_00;157;746;76;91; 0.5;0.5; 0;0;0;0
+Dizzy/World1Boss_Dizzy_01;235;746;76;91; 0.5;0.5; 0;0;0;0
+Dizzy/World1Boss_Dizzy_02;313;746;76;91; 0.5;0.5; 0;0;0;0
+Dizzy/World1Boss_Dizzy_03;391;746;76;91; 0.5;0.5; 0;0;0;0
+Empty/Empty;469;1021;2;2; 0.5;0.5; 0;0;0;0
+Idle/World1Boss_Idle_00;1;653;76;91; 0.5;0.5; 0;0;0;0
+Idle/World1Boss_Idle_01;79;653;76;91; 0.5;0.5; 0;0;0;0
+Idle/World1Boss_Idle_02;157;653;76;91; 0.5;0.5; 0;0;0;0
+Idle/World1Boss_Idle_03;79;653;76;91; 0.5;0.5; 0;0;0;0
+Jump/World1Boss_Jump_00;235;653;76;91; 0.5;0.5; 0;0;0;0
+Jump/World1Boss_Jump_01;313;653;76;91; 0.5;0.5; 0;0;0;0
+Jump/World1Boss_Jump_02;391;653;76;91; 0.5;0.5; 0;0;0;0
+Jump/World1Boss_Jump_03;1;560;76;91; 0.5;0.5; 0;0;0;0
+Jump/World1Boss_Jump_04;79;560;76;91; 0.5;0.5; 0;0;0;0
+Jump/World1Boss_Jump_05;157;560;76;91; 0.5;0.5; 0;0;0;0
+RunAway/World1Boss_RunAway_00;235;560;76;91; 0.5;0.5; 0;0;0;0
+RunAway/World1Boss_RunAway_01;313;560;76;91; 0.5;0.5; 0;0;0;0
+RunAway/World1Boss_RunAway_02;391;560;76;91; 0.5;0.5; 0;0;0;0
+RunAway/World1Boss_RunAway_03;1;467;76;91; 0.5;0.5; 0;0;0;0
+RunAway/World1Boss_RunAway_04;79;467;76;91; 0.5;0.5; 0;0;0;0
+RunAway/World1Boss_RunAway_05;157;467;76;91; 0.5;0.5; 0;0;0;0
+Slide/World1Boss_Slide_00;235;467;76;91; 0.5;0.5; 0;0;0;0
+Slide/World1Boss_Slide_01;313;467;76;91; 0.5;0.5; 0;0;0;0
+Slide/World1Boss_Slide_02;391;467;76;91; 0.5;0.5; 0;0;0;0
+Slide/World1Boss_Slide_03;1;374;76;91; 0.5;0.5; 0;0;0;0

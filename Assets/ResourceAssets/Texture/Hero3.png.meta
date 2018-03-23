@@ -1,0 +1,764 @@
+fileFormatVersion: 2
+guid: 43e14f63892fa834da0b12085ac40140
+timeCreated: 1517994290
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: castRun-Hero5_castRun_00
+    21300002: castRun-Hero5_castRun_01
+    21300004: castRun-Hero5_castRun_02
+    21300006: castRun-Hero5_castRun_03
+    21300008: castRun-Hero5_castRun_04
+    21300010: castRun-Hero5_castRun_05
+    21300012: castRun-Hero5_castRun_06
+    21300014: castRun-Hero5_castRun_07
+    21300016: castStand-Hero5_castStand_00
+    21300018: castStand-Hero5_castStand_01
+    21300020: castStand-Hero5_castStand_02
+    21300022: castStand-Hero5_castStand_03
+    21300024: castStand-Hero5_castStand_04
+    21300026: castStand-Hero5_castStand_05
+    21300028: castStand-Hero5_castStand_06
+    21300030: castStand-Hero5_castStand_07
+    21300032: Dead-Hero5_dead_00
+    21300034: Dead-Hero5_dead_01
+    21300036: Dead-Hero5_dead_02
+    21300038: Dead-Hero5_dead_03
+    21300040: Dead-Hero5_dead_04
+    21300042: Dead-Hero5_dead_05
+    21300044: Dead-Hero5_dead_06
+    21300046: Dead-Hero5_dead_07
+    21300048: Dead-Hero5_dead_08
+    21300050: Dead-Hero5_dead_09
+    21300052: Dead-Hero5_dead_10
+    21300054: Dead-Hero5_dead_11
+    21300056: Dead-Hero5_dead_12
+    21300058: Dead-Hero5_dead_13
+    21300060: Dead-Hero5_dead_14
+    21300062: Dead-Hero5_dead_15
+    21300064: Idle-Hero5_idle_00
+    21300066: Idle-Hero5_idle_01
+    21300068: Idle-Hero5_idle_02
+    21300070: Idle-Hero5_idle_03
+    21300072: Idle-Hero5_idle_04
+    21300074: Idle-Hero5_idle_05
+    21300076: Idle-Hero5_idle_06
+    21300078: Idle-Hero5_idle_07
+    21300080: Run-Hero5_run_00
+    21300082: Run-Hero5_run_01
+    21300084: Run-Hero5_run_02
+    21300086: Run-Hero5_run_03
+    21300088: Run-Hero5_run_04
+    21300090: Run-Hero5_run_05
+    21300092: Run-Hero5_run_06
+    21300094: Run-Hero5_run_07
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: 47
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: castRun-Hero5_castRun_00
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 143
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castRun-Hero5_castRun_01
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 143
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castRun-Hero5_castRun_02
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 141
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castRun-Hero5_castRun_03
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 103
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castRun-Hero5_castRun_04
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 65
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castRun-Hero5_castRun_05
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 27
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castRun-Hero5_castRun_06
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 105
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castRun-Hero5_castRun_07
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 105
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castStand-Hero5_castStand_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 218
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castStand-Hero5_castStand_01
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 179
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castStand-Hero5_castStand_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 140
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castStand-Hero5_castStand_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 101
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castStand-Hero5_castStand_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 62
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castStand-Hero5_castStand_05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 23
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castStand-Hero5_castStand_06
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 218
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: castStand-Hero5_castStand_07
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 179
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_00
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 219
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_01
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 219
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_02
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 219
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_03
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 219
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_04
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 219
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_05
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 181
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_06
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 181
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_07
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 181
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_08
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 181
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_09
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 181
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 141
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_11
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 103
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_12
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 65
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_13
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 27
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_14
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 143
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dead-Hero5_dead_15
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 143
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-Hero5_idle_00
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 108
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-Hero5_idle_01
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 106
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-Hero5_idle_02
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 73
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-Hero5_idle_03
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 106
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-Hero5_idle_04
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 70
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-Hero5_idle_05
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 70
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-Hero5_idle_06
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 35
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Idle-Hero5_idle_07
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 35
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-Hero5_run_00
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-Hero5_run_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-Hero5_run_02
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 39
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-Hero5_run_03
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 5
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-Hero5_run_04
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 39
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-Hero5_run_05
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 5
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-Hero5_run_06
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 72
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Run-Hero5_run_07
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 38
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

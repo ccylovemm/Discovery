@@ -1,0 +1,101 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:0701cbb0b7184573175a4ea51d0f4a80:848f2a0ca1092332b4de89aef26ae6cb:64d56465927d50bb5400e4c66dc46a97$
+#
+:format=40300
+:texture=UI.png
+:size=1024x1024
+:pivotpoints=enabled
+:borders=disabled
+
+Black;1018;935;4;4; 0.5;0.5; 0;0;0;0
+btn_aban_Click;446;489;110;110; 0.5;0.5; 0;0;0;0
+btn_aban_Normal;290;486;110;110; 0.5;0.5; 0;0;0;0
+btn_cast;1;587;151;159; 0.5;0.5; 0;0;0;0
+btn_castClick;459;762;151;159; 0.5;0.5; 0;0;0;0
+btn_castRange;779;774;183;183; 0.5;0.5; 0;0;0;0
+btn_castSpk_Mage;765;613;151;159; 0.5;0.5; 0;0;0;0
+btn_castSpkClick_Mage;612;762;151;159; 0.5;0.5; 0;0;0;0
+btn_castTalk;459;601;151;159; 0.5;0.5; 0;0;0;0
+btn_castTalkClick;612;601;151;159; 0.5;0.5; 0;0;0;0
+btn_castUse;765;452;151;159; 0.5;0.5; 0;0;0;0
+btn_castUseClick;293;598;151;159; 0.5;0.5; 0;0;0;0
+btn_close;918;437;97;101; 0.5;0.5; 0;0;0;0
+btn_closeClick;1;292;97;101; 0.5;0.5; 0;0;0;0
+btn_item;558;499;96;100; 0.5;0.5; 0;0;0;0
+btn_itemClick;656;499;96;100; 0.5;0.5; 0;0;0;0
+btn_large_Click_292x92;154;634;121;92; 0.5;0.5; 0;0;0;0
+btn_large_normal_292x92;154;540;115;92; 0.5;0.5; 0;0;0;0
+btn_OptBGM;439;427;86;60; 0.5;0.5; 0;0;0;0
+btn_OptBGMoff;398;365;86;60; 0.5;0.5; 0;0;0;0
+btn_OptFct;1;923;387;100; 0.5;0.5; 0;0;0;0
+btn_OptFctClick;390;923;387;100; 0.5;0.5; 0;0;0;0
+btn_OptRetreat;100;346;26;23; 0.5;0.5; 0;0;0;0
+btn_OptRetreatClick;100;321;26;23; 0.5;0.5; 0;0;0;0
+btn_OptSFX;557;334;86;60; 0.5;0.5; 0;0;0;0
+btn_OptSFXoff;281;330;86;60; 0.5;0.5; 0;0;0;0
+btn_OptShare;369;303;86;60; 0.5;0.5; 0;0;0;0
+btn_OptShareOff;457;295;86;60; 0.5;0.5; 0;0;0;0
+btn_pad;486;357;69;68; 0.5;0.5; 0;0;0;0
+btn_padRange;1;748;161;162; 0.5;0.5; 0;0;0;0
+btn_pause;143;446;109;92; 0.5;0.5; 0;0;0;0
+btn_pauseClick;287;392;109;92; 0.5;0.5; 0;0;0;0
+btn_spellEpt;143;338;106;106; 0.5;0.5; 0;0;0;0
+btnForge_Click_295x90;164;820;127;90; 0.5;0.5; 0;0;0;0
+btnForge_normal_295x90;164;728;127;90; 0.5;0.5; 0;0;0;0
+Icon_head_Oldman;1;395;140;160; 0.5;0.5; 0;0;0;0
+Icon_UnknownAcc4x;765;907;9;14; 0.5;0.5; 0;0;0;0
+Num_criticalSign;277;702;14;24; 0.5;0.5; 0;0;0;0
+UI_AccSept_483x2;154;744;6;2; 0.5;0.5; 0;0;0;0
+UI_BarLow;1018;971;4;8; 0.5;0.5; 0;0;0;0
+UI_BarRestore;1018;961;4;8; 0.5;0.5; 0;0;0;0
+UI_bossHPBar;964;894;10;12; 0.5;0.5; 0;0;0;0
+UI_bossHPBG;978;981;40;42; 0.5;0.5; 0;0;0;0
+UI_creditBG;1;557;151;28; 0.5;0.5; 0;0;0;0
+UI_decoRoleName;779;959;197;64; 0.5;0.5; 0;0;0;0
+UI_decoUpgradeFrame_Off;978;880;38;99; 0.5;0.5; 0;0;0;0
+UI_decoUpgradeFrame_on;402;497;38;99; 0.5;0.5; 0;0;0;0
+UI_diaHeadFrame;295;759;162;162; 0.5;0.5; 0;0;0;0
+UI_diaTalkBox;918;655;102;101; 0.5;0.5; 0;0;0;0
+UI_dungeonCleanBG_388x47;402;465;35;30; 0.5;0.5; 0;0;0;0
+UI_elemListBG;918;554;99;99; 0.5;0.5; 0;0;0;0
+UI_elemListBG_circle;251;380;28;28; 0.5;0.5; 0;0;0;0
+UI_enemyHPBar;1018;951;4;8; 0.5;0.5; 0;0;0;0
+ui_enemyHPBG;964;922;10;14; 0.5;0.5; 0;0;0;0
+UI_enterBtn;918;540;98;12; 0.5;0.5; 0;0;0;0
+UI_enterStage_874x506;1;208;74;82; 0.5;0.5; 0;0;0;0
+UI_enterStageBG_338x83;147;201;61;55; 0.5;0.5; 0;0;0;0
+UI_enterStageSept;1;912;292;9; 0.5;0.5; 0;0;0;0
+UI_ItemSocket_85x85;271;614;18;18; 0.5;0.5; 0;0;0;0
+UI_ItemStar_big_Ept;254;506;31;32; 0.5;0.5; 0;0;0;0
+UI_ItemStar_big_Ful;254;472;31;32; 0.5;0.5; 0;0;0;0
+UI_ItemStar_small_ept;933;760;13;12; 0.5;0.5; 0;0;0;0
+UI_ItemStar_small_ful;918;759;13;13; 0.5;0.5; 0;0;0;0
+UI_learnSpell_Circle;213;207;63;63; 0.5;0.5; 0;0;0;0
+UI_learnSpell_Plus;271;595;17;17; 0.5;0.5; 0;0;0;0
+UI_playerEnergy_full;1018;925;4;2; 0.5;0.5; 0;0;0;0
+UI_playerEnergy_notFull;1018;921;4;2; 0.5;0.5; 0;0;0;0
+UI_playerHPBar;1018;941;4;8; 0.5;0.5; 0;0;0;0
+ui_playerHPBG;964;938;10;19; 0.5;0.5; 0;0;0;0
+UI_roldInfoTxtField_126x26;100;371;27;22; 0.5;0.5; 0;0;0;0
+UI_roleBG_289x472;558;396;90;101; 0.5;0.5; 0;0;0;0
+UI_roleInfoSep_550x26;364;275;80;26; 0.5;0.5; 0;0;0;0
+UI_roleIntroTxtField_268x120;1;104;52;34; 0.5;0.5; 0;0;0;0
+UI_roleLevelStar;254;441;29;29; 0.5;0.5; 0;0;0;0
+UI_roleLevelStar_Ept;251;410;29;29; 0.5;0.5; 0;0;0;0
+UI_roleSkillFrame_300x140;77;224;68;32; 0.5;0.5; 0;0;0;0
+UI_roleSkillTxtField_295x24;1018;929;4;4; 0.5;0.5; 0;0;0;0
+UI_roleUpgradeFrameBG;213;272;64;64; 0.5;0.5; 0;0;0;0
+UI_ScrollBar;964;908;10;12; 0.5;0.5; 0;0;0;0
+UI_SelectedFrame_78x78;964;882;10;10; 0.5;0.5; 0;0;0;0
+UI_switchElement;650;367;87;130; 0.5;0.5; 0;0;0;0
+UI_TabAcc_off;77;156;54;66; 0.5;0.5; 0;0;0;0
+UI_TabAcc_on;1;140;54;66; 0.5;0.5; 0;0;0;0
+UI_TabBG_off_83x201;128;258;83;78; 0.5;0.5; 0;0;0;0
+UI_TabBG_on_83x201;279;250;83;78; 0.5;0.5; 0;0;0;0
+UI_tabSpell_off;964;819;58;59; 0.5;0.5; 0;0;0;0
+UI_tabSpell_on;964;758;58;59; 0.5;0.5; 0;0;0;0

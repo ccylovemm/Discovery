@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: cc62871736add874aa741ea084a8023a
+timeCreated: 1521609197
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Inika
+  fontNames:
+  - Inika
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: resourceassets/alldependencies/assets/resourceassets/font/inika.ttf
+  assetBundleVariant: 
