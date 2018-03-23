@@ -31,6 +31,8 @@ public class RoleView : MonoBehaviour
     public Text passiveSkill2Name;
     public Image passiveSkill2Icon;
 
+    public GameObject heroObj;
+
     public Text unlockBtnTxt;
 
     //sub2
@@ -46,6 +48,12 @@ public class RoleView : MonoBehaviour
     public ScrollRect scrollRect;
 
     private ActorVo currActorVo;
+
+    private GameObject hero;
+
+    private string tip1 = "";
+    private string tip2 = "";
+    private string tip3 = "";
 
     private void Start()
     {
@@ -87,6 +95,13 @@ public class RoleView : MonoBehaviour
         speedTxt.text = currActorVo.MoveSpeed.ToString();
         massTxt.text = currActorVo.Mass.ToString();
 
+        GameObject.Destroy(hero);
+
+        ResourceManager.Instance.LoadAsset("resourceassets/avatar.assetbundle", model =>
+        {
+            hero = GameObject.Instantiate((GameObject)model.LoadAsset("Hero" + currActorVo.Id + "_IdleImage.prefab") , heroObj.transform);
+        });
+
         string[] elements = currActorVo.Elements.Split(',');
         ResourceManager.Instance.LoadIcon("Icon_Element_" + elements[0], sprite =>
         {
@@ -96,6 +111,7 @@ public class RoleView : MonoBehaviour
         string[] str = currActorVo.Skills.Split(',');
         string[] skills = str[0].Split('_');
         SkillLevelVo skillVo = SkillLevelCFG.items[skills[0] + "" + skills[1]];
+        tip1 = LanguageManager.GetText(skillVo.Description);
         talentSkillName.text = LanguageManager.GetText(skillVo.Name);
         ResourceManager.Instance.LoadIcon(skillVo.Icon, sprite =>
         {
@@ -104,6 +120,7 @@ public class RoleView : MonoBehaviour
 
         string[] talents = currActorVo.Talent.Split(',');
         TalentVo talentVo = TalentCFG.items[talents[0]];
+        tip2 = LanguageManager.GetText(talentVo.Desc);
         passiveSkill1Name.text = LanguageManager.GetText(talentVo.Name);
         ResourceManager.Instance.LoadIcon(talentVo.Icon, sprite =>
         {
@@ -112,6 +129,7 @@ public class RoleView : MonoBehaviour
         if (talents.Length > 1)
         {
             talentVo = TalentCFG.items[talents[1]];
+            tip3 = LanguageManager.GetText(talentVo.Desc);
             passiveSkill2Name.text = LanguageManager.GetText(talentVo.Name);
             ResourceManager.Instance.LoadIcon(talentVo.Icon, sprite =>
             {
@@ -184,6 +202,21 @@ public class RoleView : MonoBehaviour
             DataManager.userData.UnlockActor(currActorVo.Id);
             UpdateData(currActorVo.Id);
         }
+    }
+
+    public void ShowSkill1Tip()
+    {
+        Tooltip.Instance.ShowTip(tip1);
+    }
+
+    public void ShowSkill2Tip()
+    {
+        Tooltip.Instance.ShowTip(tip2);
+    }
+
+    public void ShowSkill3Tip()
+    {
+        Tooltip.Instance.ShowTip(tip3);
     }
 
     public void Close()

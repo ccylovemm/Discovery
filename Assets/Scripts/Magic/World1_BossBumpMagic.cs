@@ -15,7 +15,11 @@ public class World1_BossBumpMagic : MagicBase
         circleCollider.radius = caster.circleCollider2D.radius;
         circleCollider.offset = caster.circleCollider2D.offset;
 
-        List<Vector2> list = new List<Vector2>(SceneManager.Instance.mapRoom.mapInfo.randonMonsterPos);
+        List<Vector2> list = new List<Vector2>();
+        for (int i = 0; i < SceneManager.Instance.mapRoom.mapInfo.randonMonsterPos.Count; i++)
+        {
+            list.Add(SceneManager.Instance.mapRoom.mapInfo.randonMonsterPos[i] + new Vector2(SceneManager.Instance.mapRoom.mapInfo.offsetX, SceneManager.Instance.mapRoom.mapInfo.offsetY));
+        }
         Vector2 grid = MapManager.GetGrid(caster.transform.position);
         list.Remove(grid);
         Vector2 direct = GameData.myself.currPos - caster.currPos;
@@ -81,7 +85,6 @@ public class World1_BossBumpMagic : MagicBase
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject);
         ActorObject actorObject = collision.GetComponent<ActorObject>();
         if (actorObject != null && actorObject != caster && !list.Contains(actorObject))
         {

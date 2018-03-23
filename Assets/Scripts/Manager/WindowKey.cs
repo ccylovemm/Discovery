@@ -1,6 +1,7 @@
 ﻿
 public class WindowKey
 {
+    public const string UIRoot = "UIRoot";
     public const string MainUI = "MainUI";
     public const string Revive = "Revive";
     public const string LevelResultView = "LevelResultView";

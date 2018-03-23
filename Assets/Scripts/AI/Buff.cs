@@ -41,7 +41,7 @@ public class Buff : MonoBehaviour
                 checkTime = Time.time + 0.05f;
                 Vector3 direct = target.transform.position - lastPos;
                 lastPos = target.transform.position;
-                if (!SceneManager.Instance.TerrainIn(lastPos))
+                if (!SceneManager.Instance.TerrainIn(lastPos , MapEditorItemType.Water))
                 {
                     ResourceManager.Instance.LoadAsset("resourceassets/terrainEffect.assetbundle", ab =>
                     {

@@ -54,4 +54,24 @@ public class CastMonsterMagic : MagicBase
             }
         }
     }
+
+    protected void FindEnemy()
+    {
+        target = caster.targetObject != null && !caster.targetObject.IsDead ? caster.targetObject : null;
+        if (target == null)
+        {
+            float minDistance = float.MaxValue;
+            List<ActorObject> enemys = GameData.GetTarget(caster);
+            for (int i = 0; i < enemys.Count; i++)
+            {
+                if (enemys[i].IsDead || enemys[i].IsDisappear) continue;
+                float distance = CommonUtil.Distance(caster, enemys[i]);
+                if (distance < skillVo.ShotRange && distance < minDistance)
+                {
+                    minDistance = distance;
+                    target = enemys[i];
+                }
+            }
+        }
+    }
 }

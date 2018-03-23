@@ -590,7 +590,7 @@ public class ActorObject : SceneBase
                     {
                         if (rigidbody2 != null)
                         {
-                            float power = (MassType)actorData.cfgVo.Mass == MassType.Low ? 4.0f : ((MassType)actorData.cfgVo.Mass == MassType.Middle ? 2.0f : 0.0f);
+                            float power = (MassType)actorData.cfgVo.Mass == MassType.Low ? 3.0f : ((MassType)actorData.cfgVo.Mass == MassType.Middle ? 2.0f : 0.0f);
                             rigidbody2.drag = actorData.cfgVo.Mass * 10;
                             rigidbody2.velocity = direct * power * vo.Value;
                         }

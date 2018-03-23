@@ -79,12 +79,12 @@ public class MapScene : MonoBehaviour
         Gizmos.color = new Color(0.5f, 0.5f, 1f, 0.4f);
         for (int i = 0; i < randonAltarPos.Count; i++)
         {
-            Gizmos.DrawCube(MapManager.GetPos((int)randonAltarPos[i].x + offsetX, (int)randonAltarPos[i].y + offsetY) + new Vector2(MapManager.textSize / 2.0f, MapManager.textSize / 2.0f) , new Vector3(2 * MapManager.textSize , 2 * MapManager.textSize, 0));
+            Gizmos.DrawCube(MapManager.GetPos((int)randonAltarPos[i].x + offsetX, (int)randonAltarPos[i].y + offsetY) + new Vector2(MapManager.textSize / 2.0f, MapManager.textSize / 2.0f) , new Vector3(MapManager.textSize , MapManager.textSize, 0));
         }
         Gizmos.color = new Color(0.3f, 0.8f, 0.2f, 0.4f);
         for (int i = 0; i < appointAltars.Count; i++)
         {
-            Gizmos.DrawCube(MapManager.GetPos((int)appointAltars[i].pos.x + offsetX, (int)appointAltars[i].pos.y + offsetY) + new Vector2(MapManager.textSize / 2.0f, MapManager.textSize / 2.0f), new Vector3(2 * MapManager.textSize, 2 * MapManager.textSize, 0));
+            Gizmos.DrawCube(MapManager.GetPos((int)appointAltars[i].pos.x + offsetX, (int)appointAltars[i].pos.y + offsetY) + new Vector2(MapManager.textSize / 2.0f, MapManager.textSize / 2.0f), new Vector3(MapManager.textSize, MapManager.textSize, 0));
         }
         Gizmos.color = new Color(0.5f, 0.5f, 1f, 0.4f);
         for (int i = 0; i < randonMonsterPos.Count; i++)

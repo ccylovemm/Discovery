@@ -148,13 +148,13 @@ public class SkillManager
         SkillCFG.items.Foreach(vo =>
         {
             int level = DataManager.userData.GetSkillLevel(vo.Value.SkillId);
-            if ((SkillElement)vo.Value.ComboType == SkillElement.ThreeElement || (SkillElement)vo.Value.ComboType == SkillElement.FourElement)
+            if ((SkillElement)vo.Value.ComboType == SkillElement.OneElement)
             {
-                DataManager.userData.SetSkillLevel(vo.Value.SkillId, level);
+                DataManager.userData.SetSkillLevel(vo.Value.SkillId, level == 0 ? 1 : level);
             }
             else
             {
-                DataManager.userData.SetSkillLevel(vo.Value.SkillId, level == 0 ? 1 : level);
+                DataManager.userData.SetSkillLevel(vo.Value.SkillId, level);
             }
         });
     }

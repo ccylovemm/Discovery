@@ -49,6 +49,6 @@ public class StartUp : MonoBehaviour
         AudioListener.pause = !DataManager.userData.IsSound;
 
         EventCenter.DispatchEvent(EventEnum.GameInitOver);
-     //   WindowManager.Instance.OpenWindow(WindowKey.MainUI);
+        UIManager.Instance.OpenView(WindowKey.UIRoot);
     }
 }

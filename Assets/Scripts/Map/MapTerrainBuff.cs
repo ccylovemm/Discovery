@@ -63,18 +63,12 @@ public class MapTerrainBuff : MonoBehaviour
                 continue;
             }
 
-            if (actorList[i].IsDisappear)
+            if (actorList[i].IsDisappear || actorList[i].IsDead)
             {
-                continue;
-            }
-
-            if (actorList[i].IsDead)
-            {
-                actorList.RemoveAt(i);
                 continue;
             }
            
-            if (SceneManager.Instance.TerrainIn(actorList[i].transform.position))
+            if (SceneManager.Instance.TerrainIn(actorList[i].transform.position , terrainType))
             {
                 if (Time.time > actorList[i].terrainBuffTime)
                 {

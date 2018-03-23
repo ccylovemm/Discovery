@@ -149,24 +149,4 @@ public class MagicBase : MonoBehaviour
             }
         }
     }
-
-    protected void FindEnemy()
-    {
-        target = null;
-        List<ActorObject> enemys = GameData.GetTarget(caster);
-        for (int i = 0; i < enemys.Count; i++)
-        {
-            if (enemys[i].IsDead || enemys[i].IsDisappear) continue;
-            float distance = CommonUtil.Distance(caster , enemys[i]);
-            if (distance < skillVo.ShotRange)
-            {
-                RaycastHit2D raycastHit2D = Physics2D.Raycast(caster.transform.position, enemys[i].transform.position - caster.transform.position, distance, LayerUtil.WallMasks());
-                if (raycastHit2D.collider == null)
-                {
-                    target = enemys[i];
-                    break;
-                }
-            }
-        }
-    }
 }

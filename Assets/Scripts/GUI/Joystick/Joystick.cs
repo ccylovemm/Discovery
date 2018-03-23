@@ -85,7 +85,7 @@ public class Joystick : MonoBehaviour
             if ((Input.touchCount == 0 || !InRange) && touchPresent)
             {
                 touchPresent = false;
-                joystick.SetActive(false);
+             //   joystick.SetActive(false);
                 joystickPoint.anchoredPosition = Vector2.zero;
                 if (TouchStateEvent != null)
                 {

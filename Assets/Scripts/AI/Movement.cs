@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (actorObject.IsDead || actorObject.isFrozen || actorObject.isDizzy) return;
+        if (actorObject.IsDead || actorObject.isFrozen || actorObject.isDizzy || actorObject.rigidbody2 != null && actorObject.rigidbody2.velocity.magnitude > 0) return;
 
         if (paths != null && paths.Count > 0)
         {

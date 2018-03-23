@@ -66,6 +66,7 @@ public class SceneManager : Singleton<SceneManager>
             ResourceManager.Instance.LoadAsset("resourceassets/configAssets.assetbundle", ab =>
             {
                 MapRoom mapRoom = new MapRoom();
+                mapRoom.offsetX = mapRoom.offsetY = 20;
                 mapRoom.currMapLevelVo = new MapLevelVo();
                 MapManager.ClearPath();
                 mapGird.Clear();
@@ -77,7 +78,7 @@ public class SceneManager : Singleton<SceneManager>
                 {
                     int x = layerItem.posList[j] / 1000;
                     int y = layerItem.posList[j] % 1000;
-                    int key = x * 1000 + y;
+                    int key = (x + mapRoom.offsetX) * 1000 + (y + mapRoom.offsetY);
                     mapGird.Add(key, layerItem.items[j]);
                 }
                 mapRoom.CreateScene(mapSceneAsset);
@@ -226,8 +227,7 @@ public class SceneManager : Singleton<SceneManager>
         {
             List<MapLevelVo> bossLevels = MapLevelCFG.items.Where(o => o.World == currMapVo.Id && (MapRoomType)o.Type == MapRoomType.BossLevel).ToList<MapLevelVo>();
             mapRoom = new MapRoom();
-            mapRoom.offsetX = 20;
-            mapRoom.offsetY = 20;
+            mapRoom.offsetX = mapRoom.offsetY = 20;
             mapRoom.currMapLevelVo = bossLevels[Random.Range(0, bossLevels.Count)];
             MapManager.ClearPath();
 
@@ -455,13 +455,13 @@ public class SceneManager : Singleton<SceneManager>
         return false;
     }
 
-    public bool TerrainIn(Vector2 pos)
+    public bool TerrainIn(Vector2 pos , MapEditorItemType type)
     {
          Vector2 gridPos = MapManager.GetGrid(pos.x, pos.y);
         int posValue = (int)gridPos.x * 1000 + (int)gridPos.y;
         if (!mapGird.ContainsKey(posValue)) return false;
         MapEditorItemType itemType = mapGird[posValue].itemType;
-        if (itemType == MapEditorItemType.Lava || itemType == MapEditorItemType.Mud || itemType == MapEditorItemType.Water || itemType == MapEditorItemType.Hole || itemType == MapEditorItemType.DeepWater)
+        if (itemType == type)
         {
             return true;
         }
@@ -580,15 +580,8 @@ public class SceneManager : Singleton<SceneManager>
 
     public void CreateAltar(uint id, Vector2 grid)
     {
-        for (int i = 0; i < 2; i ++)
-        {
-            for (int j = 0; j < 2; j ++)
-            {
-                Vector2 pos = grid + new Vector2(i , j);
-                MapManager.SetPathData(pos , false);
-                MapManager.SetPathHoleData(pos , false);
-            }
-        }
+        MapManager.SetPathData(grid, false);
+        MapManager.SetPathHoleData(grid, false);
 
         AltarVo altarVo = AltarCFG.items[id.ToString()];
         ResourceManager.Instance.LoadAsset("resourceassets/map.assetbundle", asset =>

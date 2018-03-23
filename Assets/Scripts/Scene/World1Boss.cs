@@ -30,16 +30,18 @@ public class World1Boss : ActorObject
         StartCoroutine(ShowBossAppear());
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(other.gameObject);
-        if(other.tag == "Shield")
+        if (isDizzy) return;
+        if(collision.tag == "Shield")
         {
             GameObject.Destroy(runDrop);
             ClearMagic();
             StopAllCoroutines();
             animationManager.Play(AnimationName.Idle);
-            GameObject.Destroy(GameObject.Instantiate(w1Boss_Stun, transform), 3);
+            movement.Stop();
+            AddBuff(null , 27 , "");
+          //  GameObject.Destroy(GameObject.Instantiate(w1Boss_Stun, transform), 3);
             StartCoroutine(ShieldDizzy());
         }
     }
@@ -47,7 +49,7 @@ public class World1Boss : ActorObject
     IEnumerator ShowBossAppear()
     {
         yield return new WaitForSeconds(0.5f);
-        WindowManager.Instance.OpenBossAppear(WindowKey.World1BossAppear);
+        UIManager.Instance.OpenView(WindowKey.World1BossAppear);
     }
 
     override protected void ReduceHp_(ActorObject caster , uint damageValue , bool isFromBuff =  false)
@@ -83,8 +85,7 @@ public class World1Boss : ActorObject
 
     IEnumerator ShieldDizzy()
     {
-        yield return null;
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(4.0f);
         while (isFrozen || isDizzy)
         {
             yield return null;

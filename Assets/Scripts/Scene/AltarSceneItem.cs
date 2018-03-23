@@ -28,24 +28,41 @@ public class AltarSceneItem : SceneBase
             used = true;
             normalStatus.SetActive(false);
             usedStatus.SetActive(true);
-            List<SkillVo> skillList = new List<SkillVo>();
+            List<SkillVo> skill2List = new List<SkillVo>();
+            List<SkillVo> skill3List = new List<SkillVo>();
+            List<SkillVo> skill4List = new List<SkillVo>();
             SkillCFG.items.Foreach(vo => {
-                if ((SkillElement)vo.Value.ComboType != SkillElement.OneElement)
+                if ((SkillElement)vo.Value.ComboType == SkillElement.TwoElement)
                 {
-                    skillList.Add(vo.Value);
+                    skill2List.Add(vo.Value);
+                }
+                else if ((SkillElement)vo.Value.ComboType == SkillElement.ThreeElement)
+                {
+                    skill3List.Add(vo.Value);
+                }
+                else if ((SkillElement)vo.Value.ComboType == SkillElement.FourElement)
+                {
+                    skill4List.Add(vo.Value);
                 }
             });
 
             randomSkillList.Clear();
-            int index = Random.Range(0 , skillList.Count);
-            randomSkillList.Add(skillList[index]);
-            skillList.RemoveAt(index);
-            index = Random.Range(0, skillList.Count);
-            randomSkillList.Add(skillList[index]);
-            skillList.RemoveAt(index);
-            index = Random.Range(0, skillList.Count);
-            randomSkillList.Add(skillList[index]);
-            skillList.RemoveAt(index);
+            if (Random.Range(0, 10000) < 1000 * GameData.myData.elements.Count)
+            {
+                randomSkillList.Insert(0, skill4List[Random.Range(0, skill4List.Count)]);
+            }
+
+            if (Random.Range(0, 10000) < 2000 * GameData.myData.elements.Count)
+            {
+                randomSkillList.Insert(0 , skill3List[Random.Range(0, skill3List.Count)]);
+            }
+
+            for(int i = randomSkillList.Count; i < 3; i ++)
+            {
+                int index = Random.Range(0, skill2List.Count);
+                randomSkillList.Insert(0, skill2List[index]);
+                skill2List.RemoveAt(index);
+            }
         }
         WindowManager.Instance.OpenWindow(WindowKey.AltarView, new object[] { randomSkillList });
     }

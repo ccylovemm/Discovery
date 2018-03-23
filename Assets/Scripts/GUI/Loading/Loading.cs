@@ -32,8 +32,11 @@ public class Loading : Singleton<Loading>
 
     public void OnSingleClick()
     {
-        startGame.SetActive(false);
-        SceneManager.Instance.Enter();
+        if (UIManager.Instance.HasView(WindowKey.UIRoot))
+        {
+            startGame.SetActive(false);
+            SceneManager.Instance.Enter();
+        }
     }
 
     public void FadeDisable(TweenCallback callBack)
