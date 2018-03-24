@@ -9,26 +9,20 @@ using UnityEditor;
 [System.Serializable]
 public class MapScene : MonoBehaviour
 {
+    public int offsetX;
+    public int offsetY;
+
     public int mapSizeX;
     public int mapSizeY;
 
     public MapWorldResource worldResource;
 
-    public int offsetX;
-    public int offsetY;
-    
-    public List<Vector2> randonBirthPos = new List<Vector2>();
-    public List<Vector2> randonAltarPos = new List<Vector2>();
-    public List<Vector2> randonChestPos = new List<Vector2>();
-    public List<Vector2> randonMonsterPos = new List<Vector2>();
-    public List<AppointAltar> appointAltars = new List<AppointAltar>();
-    public List<AppointMonster> appointMonsters = new List<AppointMonster>();
-
-    public List<Vector2> walkableList = new List<Vector2>();
     public List<MapLayerItem> layerItems = new List<MapLayerItem>();
     public List<MapEditorSortLayer> layers = new List<MapEditorSortLayer>();
 
-    public bool isShowPath = false;
+    public GameObject sceneMeshObj;
+    public List<GameObject> colliderObjs = new List<GameObject>();
+    public List<GameObject> generatePrefabItems = new List<GameObject>();
 
     private List<Rect> rects = new List<Rect>();
     private List<int> m_triangles = new List<int>();
@@ -37,12 +31,9 @@ public class MapScene : MonoBehaviour
     private List<Vector3> m_vertices = new List<Vector3>();
     private List<Vector2> offsetList = new List<Vector2>();
 
-    private GameObject sceneMeshObj;
     private Vector2 texelSize;
 
-    private List<GameObject> colliderObjs = new List<GameObject>();
-    private List<GameObject> generatePrefabItems = new List<GameObject>();
-    private List<GameObject> generateMountainsItems = new List<GameObject>();
+    private Dictionary<int, MapResourceItem> mapGird = new Dictionary<int, MapResourceItem>();
 
 #if UNITY_EDITOR
     void OnDrawGizmos()
@@ -58,48 +49,80 @@ public class MapScene : MonoBehaviour
         {
             Gizmos.DrawLine(new Vector3(offsetX * MapManager.textSize, (i + offsetY) * MapManager.textSize, 0), new Vector3((mapSizeX + offsetX) * MapManager.textSize, (i + offsetY) * MapManager.textSize, 0));
         }
-        if(isShowPath)
-        {
-            Gizmos.color = new Color(1f, 0.5f, 1f, 0.5f);
-            for (int i = 0; i < walkableList.Count; i++)
-            {
-                Gizmos.DrawCube(MapManager.GetPos((int)walkableList[i].x + offsetX, (int)walkableList[i].y + offsetY), new Vector3(MapManager.textSize, MapManager.textSize, 0));
-            }
-        }
-        Gizmos.color = new Color(0, 1.0f, 0, 0.4f);
-        for (int i = 0; i < randonBirthPos.Count; i++)
-        {
-            Gizmos.DrawCube(MapManager.GetPos((int)randonBirthPos[i].x + offsetX, (int)randonBirthPos[i].y + offsetY), Vector3.one * 0.01f * (i + 10));
-        }
-        Gizmos.color = new Color(0.9f, 0, 00.9f, 0.4f);
-        for (int i = 0; i < randonChestPos.Count; i++)
-        {
-            Gizmos.DrawCube(MapManager.GetPos((int)randonChestPos[i].x + offsetX, (int)randonChestPos[i].y + offsetY), Vector3.one * 0.01f * (i + 10));
-        }
-        Gizmos.color = new Color(0.5f, 0.5f, 1f, 0.4f);
-        for (int i = 0; i < randonAltarPos.Count; i++)
-        {
-            Gizmos.DrawCube(MapManager.GetPos((int)randonAltarPos[i].x + offsetX, (int)randonAltarPos[i].y + offsetY) + new Vector2(MapManager.textSize / 2.0f, MapManager.textSize / 2.0f) , new Vector3(MapManager.textSize , MapManager.textSize, 0));
-        }
-        Gizmos.color = new Color(0.3f, 0.8f, 0.2f, 0.4f);
-        for (int i = 0; i < appointAltars.Count; i++)
-        {
-            Gizmos.DrawCube(MapManager.GetPos((int)appointAltars[i].pos.x + offsetX, (int)appointAltars[i].pos.y + offsetY) + new Vector2(MapManager.textSize / 2.0f, MapManager.textSize / 2.0f), new Vector3(MapManager.textSize, MapManager.textSize, 0));
-        }
-        Gizmos.color = new Color(0.5f, 0.5f, 1f, 0.4f);
-        for (int i = 0; i < randonMonsterPos.Count; i++)
-        {
-            Gizmos.DrawSphere(MapManager.GetPos((int)randonMonsterPos[i].x + offsetX, (int)randonMonsterPos[i].y + offsetY), 0.1f + i * 0.01f);
-        }
-        Gizmos.color = new Color(0.3f, 0.8f, 0.2f, 0.4f);
-        for (int i = 0; i < appointMonsters.Count; i++)
-        {
-            Gizmos.DrawSphere(MapManager.GetPos((int)appointMonsters[i].pos.x + offsetX, (int)appointMonsters[i].pos.y + offsetY), 0.1f + i * 0.01f);
-        }
     }
 #endif
 
-    public void Clear(bool bol= true)
+    public void FreshMapGrid()
+    {
+        mapGird.Clear();
+        int index = layers.IndexOf(MapEditorSortLayer.Floor1);
+        if(index != -1)
+        {
+            MapLayerItem mapLayerItem = layerItems[index];
+            for(int i = 0; i < mapLayerItem.items.Count; i ++)
+            {
+                mapGird.Add(mapLayerItem.posList[i] , mapLayerItem.items[i]);
+            }
+        }
+    }
+
+    public void AddGrid(int pos, MapResourceItem selectedTile)
+    {
+        int index = layers.IndexOf(selectedTile.layer);
+        if (index != -1)
+        {
+            int i = layerItems[index].posList.IndexOf(pos);
+            if (i != -1)
+            {
+                layerItems[index].items[i] = selectedTile;
+            }
+            else
+            {
+                layerItems[index].posList.Add(pos);
+                layerItems[index].items.Add(selectedTile);
+            }
+        }
+        else
+        {
+            layers.Add(selectedTile.layer);
+            layerItems.Add(new MapLayerItem());
+            layerItems[layerItems.Count - 1].posList.Add(pos);
+            layerItems[layerItems.Count - 1].items.Add(selectedTile);
+        }
+        if(selectedTile.layer == MapEditorSortLayer.Floor1)
+        {
+            if (mapGird.ContainsKey(pos))
+            {
+                mapGird[pos] = selectedTile;
+            }
+            else
+            {
+                mapGird.Add(pos , selectedTile);
+            }
+        }
+    }
+
+    public void ClearGrid(Vector2 grid)
+    {
+        for (int i = 3; i > -1; i--)
+        {
+            int index = layers.IndexOf((MapEditorSortLayer)i);
+            if (index != -1)
+            {
+                int n = layerItems[index].posList.IndexOf((int)grid.x * 10000 + (int)grid.y);
+                if (n != -1)
+                {
+                    MapResourceItem item = layerItems[index].items[n];
+                    layerItems[index].posList.RemoveAt(n);
+                    layerItems[index].items.RemoveAt(n);
+                    UpdateMap();
+                    break;
+                }
+            }
+        }
+    }
+
+    public void UpdateMap()
     {
         rects.Clear();
         m_triangles.Clear();
@@ -107,6 +130,71 @@ public class MapScene : MonoBehaviour
         posList.Clear();
         m_vertices.Clear();
         offsetList.Clear();
+
+        int count = generatePrefabItems.Count;
+        for (int i = 0; i < count; i++)
+        {
+            GameObject.DestroyImmediate(generatePrefabItems[i]);
+        }
+        generatePrefabItems.Clear();
+
+        for (int i = 0; i < 3; i++)
+        {
+            int index = layers.IndexOf((MapEditorSortLayer)i);
+            if (index != -1)
+            {
+                MapLayerItem mapLayerItem = layerItems[index];
+                count = mapLayerItem.items.Count;
+                for (int j = 0; j < count; j++)
+                {
+                    int x = mapLayerItem.posList[j] / 10000;
+                    int y = mapLayerItem.posList[j] % 10000;
+                    if (mapLayerItem.items[j].isPrefab)
+                    {
+                        GameObject go = GameObject.Instantiate(mapLayerItem.items[j].gameObject);
+                        go.transform.position = MapManager.GetPos(x, y);
+                        generatePrefabItems.Add(go);
+                    }
+                    else
+                    {
+                        List<MapSprite> list = new List<MapSprite>();
+                        if (mapLayerItem.items[j].isNine)
+                        {
+                            list = GetSpriteList(x, y, mapGird);
+                        }
+                        else
+                        {
+                            list = mapLayerItem.items[j].normalList;
+                        }
+                        int random = Random.Range(0, 10000);
+                        MapSprite mapSprite = list.Where(s => random < s.sRate).FirstOrDefault();
+                        rects.Add(mapSprite.sprite.rect);
+                        posList.Add(new Vector2((x + offsetX) * MapManager.textSize + MapManager.textSize / 2.0f, (y + offsetY) * MapManager.textSize + MapManager.textSize / 2.0f));
+                        offsetList.Add(new Vector2(mapSprite.offsetX, mapSprite.offsetY) * MapManager.textSize * 0.05f);
+                    }
+                }
+            }
+        }
+        if (Application.isPlaying)
+        {
+            CombineMesh();
+        }
+        else
+        {
+#if UNITY_EDITOR
+            CombineMeshFromEditor();
+#endif
+        }
+    }
+
+    public void Clear()
+    {
+        m_uv.Clear();
+        rects.Clear();
+        posList.Clear();
+        offsetList.Clear();
+        m_vertices.Clear();
+        m_triangles.Clear();
 
         int count = colliderObjs.Count;
         for (int i = 0; i < count; i++)
@@ -120,127 +208,9 @@ public class MapScene : MonoBehaviour
             GameObject.DestroyImmediate(generatePrefabItems[i]);
         }
         generatePrefabItems.Clear();
-        count = generateMountainsItems.Count;
-        for (int i = 0; i < count; i++)
-        {
-            GameObject.DestroyImmediate(generateMountainsItems[i]);
-        }
-        generateMountainsItems.Clear();
+
         GameObject.DestroyImmediate(sceneMeshObj);
-        if(bol) GameObject.DestroyImmediate(gameObject);
-    }
-
-    public void Clone(MapSceneAsset mapSceneAsset)
-    {
-        mapSizeX = mapSceneAsset.mapSizeX;
-        mapSizeY = mapSceneAsset.mapSizeY;
-        worldResource = mapSceneAsset.worldResource;
-        layerItems.Clear();
-        int count = mapSceneAsset.layerItems.Count;
-        for (int i = 0; i < count; i++)
-        {
-            MapLayerItem newItem = new MapLayerItem();
-            MapLayerItem mapLayerItem = mapSceneAsset.layerItems[i];
-            newItem.posList = new List<int>(mapLayerItem.posList);
-            newItem.items = new List<MapResourceItem>(mapLayerItem.items);
-            layerItems.Add(newItem);
-        }
-
-        appointAltars.Clear();
-        count = mapSceneAsset.appointAltars.Count;
-        for (int i = 0; i < count; i++)
-        {
-            AppointAltar newAltar = new AppointAltar();
-            AppointAltar appointAltar = mapSceneAsset.appointAltars[i];
-            newAltar.pos = appointAltar.pos;
-            newAltar.groups = new List<int>(appointAltar.groups);
-            appointAltars.Add(newAltar);
-        }
-
-        appointMonsters.Clear();
-        count = mapSceneAsset.appointMonsters.Count;
-        for (int i = 0; i < count; i++)
-        {
-            AppointMonster newMonster = new AppointMonster();
-            AppointMonster appointMonster = mapSceneAsset.appointMonsters[i];
-            newMonster.pos = appointMonster.pos;
-            newMonster.groups = new List<int>(appointMonster.groups);
-            appointMonsters.Add(newMonster);
-        }
-
-        layers = new List<MapEditorSortLayer>(mapSceneAsset.layers);
-        walkableList = new List<Vector2>(mapSceneAsset.walkableList);
-        randonBirthPos = new List<Vector2>(mapSceneAsset.randonBirthPos);
-        randonChestPos = new List<Vector2>(mapSceneAsset.randonChestPos);
-        randonAltarPos = new List<Vector2>(mapSceneAsset.randonAltarPos);
-        randonMonsterPos = new List<Vector2>(mapSceneAsset.randonMonsterPos);
-    }
-
-    public void CreateMonster()
-    {
-        string level = SceneManager.Instance.currLevelVo.MonsterLevel;
-
-        while (appointMonsters.Count > 0)
-        {
-            if (appointMonsters[0].groups.Count > 0)
-            {
-                Vector2 pos = appointMonsters[0].pos;
-                int group = appointMonsters[0].groups[Random.Range(0, appointMonsters[0].groups.Count)];
-                if (MonsterGroupCFG.items.ContainsKey(group.ToString()))
-                {
-                    MonsterGroupVo groupVo = MonsterGroupCFG.items[group.ToString()];
-                    object o = groupVo.GetType().GetField(level).GetValue(groupVo);
-                    SceneManager.Instance.CreateMonster(pos + new Vector2(offsetX, offsetY), System.Convert.ToString(o));
-
-                }
-            }
-            appointMonsters.RemoveAt(0);
-        }
-    }
-
-    public void CreateAppointAltar()
-    {
-        while (appointAltars.Count > 0)
-        {
-            int group = appointAltars[0].groups[Random.Range(0, appointAltars[0].groups.Count)];
-            if (AltarCFG.items.ContainsKey(group.ToString()))
-            {
-                SceneManager.Instance.CreateAltar((uint)group , appointAltars[0].pos + new Vector2(offsetX, offsetY));
-
-            }
-            appointAltars.RemoveAt(0);
-        }
-    }
-
-    public void UpdateNavPath()
-    {
-        walkableList.Clear();
-        List<int> nonWalkableList = new List<int>();
-        for (int i = 0; i < layerItems.Count; i ++)
-        {
-            for (int j = 0; j < layerItems[i].items.Count; j ++)
-            {
-                Vector2 p = new Vector2(layerItems[i].posList[j] / 1000, layerItems[i].posList[j] % 1000);
-                if (layerItems[i].items[j].isPath)
-                {
-                    if(nonWalkableList.IndexOf(layerItems[i].posList[j]) == -1 && walkableList.IndexOf(p) == -1)
-                    {
-                        walkableList.Add(p);
-                    }
-                }
-                else
-                {
-                    if (nonWalkableList.IndexOf(layerItems[i].posList[j]) == -1)
-                    {
-                        nonWalkableList.Add(layerItems[i].posList[j]);
-                    }
-                    if (walkableList.IndexOf(p) != -1)
-                    {
-                        walkableList.Remove(p);
-                    }
-                }
-            }
-        }
+        GameObject.DestroyImmediate(gameObject);
     }
 
     public void UpdateCollider()
@@ -282,27 +252,27 @@ public class MapScene : MonoBehaviour
                 List<int> close = new List<int>();
                 while (list.Count > 0)
                 {
-                    int x = list[0] / 1000;
-                    int y = list[0] % 1000;
-                    int pos1 = (x - 1) * 1000 + y;
+                    int x = list[0] / 10000;
+                    int y = list[0] % 10000;
+                    int pos1 = (x - 1) * 10000 + y;
                     if (allPos.IndexOf(pos1) != -1)
                     {
                         list.Add(pos1);
                         allPos.Remove(pos1);
                     }
-                    pos1 = (x + 1) * 1000 + y;
+                    pos1 = (x + 1) * 10000 + y;
                     if (allPos.IndexOf(pos1) != -1)
                     {
                         list.Add(pos1);
                         allPos.Remove(pos1);
                     }
-                    pos1 = x * 1000 + (y - 1);
+                    pos1 = x * 10000 + (y - 1);
                     if (allPos.IndexOf(pos1) != -1)
                     {
                         list.Add(pos1);
                         allPos.Remove(pos1);
                     }
-                    pos1 = x * 1000 + (y + 1);
+                    pos1 = x * 10000 + (y + 1);
                     if (allPos.IndexOf(pos1) != -1)
                     {
                         list.Add(pos1);
@@ -338,8 +308,8 @@ public class MapScene : MonoBehaviour
                 int cc = posList[i].Count;
                 for (int j = 0; j < cc; j++)
                 {
-                    int x = posList[i][j] / 1000;
-                    int y = posList[i][j] % 1000;
+                    int x = posList[i][j] / 10000;
+                    int y = posList[i][j] % 10000;
 
                     count = vertices.Count / 4;
                     vertices.AddRange(new Vector3[4]);
@@ -348,22 +318,22 @@ public class MapScene : MonoBehaviour
                     vertices[count * 4 + 2] = new Vector3(x + 1, y + 1);
                     vertices[count * 4 + 3] = new Vector3(x, y + 1);
 
-                    if (posList[i].IndexOf(x * 1000 + (y + 1)) == -1)
+                    if (posList[i].IndexOf(x * 10000 + (y + 1)) == -1)
                     {
                         AddEdge(edges, vertices[count * 4 + 2], vertices[count * 4 + 3]);
                     }
 
-                    if (posList[i].IndexOf(x * 1000 + (y - 1)) == -1)
+                    if (posList[i].IndexOf(x * 10000 + (y - 1)) == -1)
                     {
                         AddEdge(edges, vertices[count * 4], vertices[count * 4 + 1]);
                     }
 
-                    if (posList[i].IndexOf((x - 1) * 1000 + y) == -1)
+                    if (posList[i].IndexOf((x - 1) * 10000 + y) == -1)
                     {
                         AddEdge(edges, vertices[count * 4 + 3], vertices[count * 4]);
                     }
 
-                    if (posList[i].IndexOf((x + 1) * 1000 + y) == -1)
+                    if (posList[i].IndexOf((x + 1) * 10000 + y) == -1)
                     {
                         AddEdge(edges, vertices[count * 4 + 1], vertices[count * 4 + 2]);
                     }
@@ -372,43 +342,7 @@ public class MapScene : MonoBehaviour
                 GameObject go = new GameObject();
                 PolygonCollider2D polygonCollider2D = go.AddComponent<PolygonCollider2D>();
 
-                if (collider.Key == MapEditorItemType.Hole)
-                {
-                    polygonCollider2D.isTrigger = true;
-                    go.AddComponent<MapTerrainFall>();
-                    go.layer = LayerUtil.LayerToHole();
-                }
-                else if (collider.Key == MapEditorItemType.Water)
-                {
-                    polygonCollider2D.isTrigger = true;
-                    MapTerrainBuff mapTerrainBuff = go.AddComponent<MapTerrainBuff>();
-                    mapTerrainBuff.buffId = 2;
-                    mapTerrainBuff.terrainType = MapEditorItemType.Water;
-                }
-                else if (collider.Key == MapEditorItemType.Lava)
-                {
-                    polygonCollider2D.isTrigger = true;
-                    MapTerrainBuff mapTerrainBuff = go.AddComponent<MapTerrainBuff>();
-                    mapTerrainBuff.buffId = 1;
-                    mapTerrainBuff.terrainType = MapEditorItemType.Lava;
-                }
-                else if (collider.Key == MapEditorItemType.Mud)
-                {
-                    polygonCollider2D.isTrigger = true;
-                    MapTerrainBuff mapTerrainBuff = go.AddComponent<MapTerrainBuff>();
-                    mapTerrainBuff.buffId = 29;
-                    mapTerrainBuff.terrainType = MapEditorItemType.Mud;
-                }
-                else if (collider.Key == MapEditorItemType.DeepWater)
-                {
-                    polygonCollider2D.isTrigger = true;
-                    go.AddComponent<MapTerrainFall>();
-                    go.layer = LayerUtil.LayerToHole();
-                }
-                else if (collider.Key == MapEditorItemType.Wall || collider.Key == MapEditorItemType.StoneWall)
-                {
-                    go.layer = LayerUtil.LayerToObstacle();
-                }
+                go.layer = LayerUtil.LayerToObstacle();
 
                 colliderObjs.Add(go);
                 PolygoniseEdges(polygons, edges);
@@ -421,130 +355,7 @@ public class MapScene : MonoBehaviour
         }
     }
 
-    public void UpdateMesh()
-    {
-        rects.Clear();
-        m_triangles.Clear();
-        m_uv.Clear();
-        posList.Clear();
-        m_vertices.Clear();
-        offsetList.Clear();
-
-        for (int i = 0; i < 7; i++)
-        {
-            int index = layers.IndexOf((MapEditorSortLayer)i);
-            if (index != -1)
-            {
-                Dictionary<int, MapResourceItem> mapGird = new Dictionary<int, MapResourceItem>();
-                for (int n = 0; n < layerItems[index].items.Count; n++)
-                {
-                    mapGird.Add(layerItems[index].posList[n], layerItems[index].items[n]);
-                }
-                int count = layerItems[index].items.Count;
-                for (int j = 0; j < count; j++)
-                {
-                    int x = layerItems[index].posList[j] / 1000;
-                    int y = layerItems[index].posList[j] % 1000;
-                    if (!layerItems[index].items[j].isPrefab)
-                    {
-                        List<MapSprite> list = GetSpriteList(x + offsetX, y + offsetY, mapGird);
-                        int random = Random.Range(0, 10000);
-                        MapSprite mapSprite = list.Where(s => random < s.sRate).FirstOrDefault();
-                        rects.Add(mapSprite.sprite.rect);
-                        posList.Add(new Vector2((x + offsetX) * MapManager.textSize + MapManager.textSize / 2.0f, (y + offsetY) * MapManager.textSize + MapManager.textSize / 2.0f));
-                        offsetList.Add(new Vector2(mapSprite.offsetX, mapSprite.offsetY) * MapManager.textSize * 0.05f);
-                    }
-                }
-            }
-        }
-        if (Application.isPlaying)
-        {
-            CombineMesh();
-        }
-        else
-        {
-#if UNITY_EDITOR
-            CombineMeshFromEditor();
-#endif
-        }
-    }
-
-    public void CreateScene(Dictionary<int, MapResourceItem> mapAllGird = null)
-    {
-        Clear(false);
-        for (int i = 0; i < 10; i++)
-        {
-            int index = layers.IndexOf((MapEditorSortLayer)i);
-            if (index != -1)
-            {
-                MapLayerItem mapLayerItem = layerItems[index];
-
-                Dictionary<int, MapResourceItem> mapGird = new Dictionary<int, MapResourceItem>();
-
-                if (i != 0 || mapAllGird == null)
-                {
-                    int c = mapLayerItem.items.Count;
-                    for (int n = 0; n < c; n++)
-                    {
-                        mapGird.Add(mapLayerItem.posList[n] + offsetX * 1000 + offsetY, mapLayerItem.items[n]);
-                    }
-                }
-                else
-                {
-                    mapGird = mapAllGird;
-                }
-
-                int count = mapLayerItem.items.Count;
-                for (int j = 0; j < count; j++)
-                {
-                    int x = mapLayerItem.posList[j] / 1000;
-                    int y = mapLayerItem.posList[j] % 1000;
-                    if (mapLayerItem.items[j].isPrefab)
-                    {
-                        GameObject go = GameObject.Instantiate(mapLayerItem.items[j].gameObject);
-                        go.transform.position = MapManager.GetPos(x + offsetX, y + offsetY);
-                        generatePrefabItems.Add(go);
-                    }
-                    else
-                    {
-                        List<MapSprite> list = GetSpriteList(x + offsetX, y + offsetY, mapGird);
-                        int random = Random.Range(0 , 10000);
-                        MapSprite mapSprite = list.Where(s => random < s.sRate).FirstOrDefault();
-                        rects.Add(mapSprite.sprite.rect);
-                        posList.Add(new Vector2((x + offsetX) * MapManager.textSize + MapManager.textSize / 2.0f, (y + offsetY) * MapManager.textSize + MapManager.textSize / 2.0f));
-                        offsetList.Add(new Vector2(mapSprite.offsetX, mapSprite.offsetY) * MapManager.textSize * 0.05f);
-                    }
-                }
-            }
-        }
-        if (Application.isPlaying)
-        {
-            CombineMesh();
-        }
-        else
-        {
-#if UNITY_EDITOR
-            CombineMeshFromEditor();
-#endif
-        }
-    }
-
-    public void UpdateTile(Vector2 pos, MapResourceItem selectedTile)
-    {
-        if (selectedTile.isPrefab)
-        {
-            GameObject go = GameObject.Instantiate(selectedTile.gameObject);
-            go.transform.position = MapManager.GetPos((int)pos.x + offsetX, (int)pos.y + offsetY);
-            generatePrefabItems.Add(go);
-        }
-        else
-        {
-            UpdateMesh();
-        }
-    }
-
-
-    void AddEdge(List<Collider2DEdge> edges, Vector2 p1, Vector2 p2)
+    private void AddEdge(List<Collider2DEdge> edges, Vector2 p1, Vector2 p2)
     {
         int index = edges.Count;
         Collider2DEdge thisEdge = new Collider2DEdge(p1, p2);
@@ -574,18 +385,18 @@ public class MapScene : MonoBehaviour
         edges.Add(thisEdge);
     }
 
-    bool Approximately(Vector2 v1, Vector2 v2)
+    private bool Approximately(Vector2 v1, Vector2 v2)
     {
         float tolerance = 0.05f;
         return (v1.x > v2.x - tolerance && v1.x < v2.x + tolerance && v1.y > v2.y - tolerance && v1.y < v2.y + tolerance);
     }
 
-    void PolygoniseEdges(List<Vector2[]> polygons, List<Collider2DEdge> edges)
+    private void PolygoniseEdges(List<Vector2[]> polygons, List<Collider2DEdge> edges)
     {
         if (edges.Count == 0)
             return;
         List<Vector2> currentPolygon = new List<Vector2>();
-        currentPolygon.Add((edges[0].p1 + new Vector2(offsetX , offsetY)) * MapManager.textSize);
+        currentPolygon.Add((edges[0].p1 + new Vector2(offsetX, offsetY)) * MapManager.textSize);
         bool isP2End = true;
         List<int> edgeIndices = new List<int>(edges.Count);
         int count = edges.Count;
@@ -647,7 +458,7 @@ public class MapScene : MonoBehaviour
         return;
     }
 
-    void RemoveEdgeConnections(List<Collider2DEdge> edges, int index)
+    private void RemoveEdgeConnections(List<Collider2DEdge> edges, int index)
     {
         int count = edges[index].p2Connections.Count;
         for (int i = 0; i < count; i++)
@@ -709,18 +520,18 @@ public class MapScene : MonoBehaviour
         }
     }
 
-    public List<MapSprite> GetSpriteList(int i, int j, Dictionary<int, MapResourceItem> girdInfo)
+    private List<MapSprite> GetSpriteList(int i, int j, Dictionary<int, MapResourceItem> girdInfo)
     {
-        MapResourceItem item = girdInfo[i * 1000 + j];
+        MapResourceItem item = girdInfo[i * 10000 + j];
 
-        bool grid1 = girdInfo.ContainsKey((i - 1) * 1000 + j);
-        bool grid2 = girdInfo.ContainsKey((i + 1) * 1000 + j);
-        bool grid3 = girdInfo.ContainsKey(i * 1000 + (j - 1));
-        bool grid4 = girdInfo.ContainsKey(i * 1000 + (j + 1));
-        bool grid5 = girdInfo.ContainsKey((i - 1) * 1000 + (j + 1));
-        bool grid6 = girdInfo.ContainsKey((i + 1) * 1000 + (j + 1));
-        bool grid7 = girdInfo.ContainsKey((i - 1) * 1000 + (j - 1));
-        bool grid8 = girdInfo.ContainsKey((i + 1) * 1000 + (j - 1));
+        bool grid1 = girdInfo.ContainsKey((i - 1) * 10000 + j);
+        bool grid2 = girdInfo.ContainsKey((i + 1) * 10000 + j);
+        bool grid3 = girdInfo.ContainsKey(i * 10000 + (j - 1));
+        bool grid4 = girdInfo.ContainsKey(i * 10000 + (j + 1));
+        bool grid5 = girdInfo.ContainsKey((i - 1) * 10000 + (j + 1));
+        bool grid6 = girdInfo.ContainsKey((i + 1) * 10000 + (j + 1));
+        bool grid7 = girdInfo.ContainsKey((i - 1) * 10000 + (j - 1));
+        bool grid8 = girdInfo.ContainsKey((i + 1) * 10000 + (j - 1));
 
         bool wall1 = item.itemType == MapEditorItemType.Wall && !grid1;
         bool wall2 = item.itemType == MapEditorItemType.Wall && !grid2;
@@ -731,14 +542,14 @@ public class MapScene : MonoBehaviour
         bool wall7 = item.itemType == MapEditorItemType.Wall && !grid7;
         bool wall8 = item.itemType == MapEditorItemType.Wall && !grid8;
 
-        bool left = wall1 || grid1 && (girdInfo[(i - 1) * 1000 + j].itemType == item.itemType || item.itemType == MapEditorItemType.Water && girdInfo[(i - 1) * 1000 + j].itemType == MapEditorItemType.DeepWater);
-        bool right = wall2 || grid2 && (girdInfo[(i + 1) * 1000 + j].itemType == item.itemType || item.itemType == MapEditorItemType.Water && girdInfo[(i + 1) * 1000 + j].itemType == MapEditorItemType.DeepWater);
-        bool down = wall3 || grid3 && (girdInfo[i * 1000 + (j - 1)].itemType == item.itemType || item.itemType == MapEditorItemType.Water && girdInfo[i * 1000 + (j - 1)].itemType == MapEditorItemType.DeepWater);
-        bool up = wall4 || grid4 && (girdInfo[i * 1000 + (j + 1)].itemType == item.itemType || item.itemType == MapEditorItemType.Water && girdInfo[i * 1000 + (j + 1)].itemType == MapEditorItemType.DeepWater);
-        bool leftUp = wall5 || grid5 && (girdInfo[(i - 1) * 1000 + (j + 1)].itemType == item.itemType || item.itemType == MapEditorItemType.Water && girdInfo[(i - 1) * 1000 + (j + 1)].itemType == MapEditorItemType.DeepWater);
-        bool rightUp = wall6 || grid6 && (girdInfo[(i + 1) * 1000 + (j + 1)].itemType == item.itemType || item.itemType == MapEditorItemType.Water && girdInfo[(i + 1) * 1000 + (j + 1)].itemType == MapEditorItemType.DeepWater);
-        bool leftDown = wall7 || grid7 && (girdInfo[(i - 1) * 1000 + (j - 1)].itemType == item.itemType || item.itemType == MapEditorItemType.Water && girdInfo[(i - 1) * 1000 + (j - 1)].itemType == MapEditorItemType.DeepWater);
-        bool rightDown = wall8 || grid8 && (girdInfo[(i + 1) * 1000 + (j - 1)].itemType == item.itemType || item.itemType == MapEditorItemType.Water && girdInfo[(i + 1) * 1000 + (j - 1)].itemType == MapEditorItemType.DeepWater);
+        bool left = wall1 || grid1 && (girdInfo[(i - 1) * 10000 + j].itemType == item.itemType);
+        bool right = wall2 || grid2 && (girdInfo[(i + 1) * 10000 + j].itemType == item.itemType);
+        bool down = wall3 || grid3 && (girdInfo[i * 10000 + (j - 1)].itemType == item.itemType);
+        bool up = wall4 || grid4 && (girdInfo[i * 10000 + (j + 1)].itemType == item.itemType);
+        bool leftUp = wall5 || grid5 && (girdInfo[(i - 1) * 10000 + (j + 1)].itemType == item.itemType);
+        bool rightUp = wall6 || grid6 && (girdInfo[(i + 1) * 10000 + (j + 1)].itemType == item.itemType);
+        bool leftDown = wall7 || grid7 && (girdInfo[(i - 1) * 10000 + (j - 1)].itemType == item.itemType);
+        bool rightDown = wall8 || grid8 && (girdInfo[(i + 1) * 10000 + (j - 1)].itemType == item.itemType);
 
 
         if (item.isNine)
@@ -988,11 +799,11 @@ public class MapScene : MonoBehaviour
 #if UNITY_EDITOR
     public void CombineMeshFromEditor()
     {
-        sceneMeshObj = GameObject.Find("SceneMeshCombine");
+        sceneMeshObj = GameObject.Find("MapTerrain" + name.Replace("Map" , ""));
         if (sceneMeshObj == null)
         {
             sceneMeshObj = GameObject.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/ResourceAssets/Prefabs/Map/World" + (int)worldResource + ".prefab"));
-            sceneMeshObj.name = "SceneMeshCombine";
+            sceneMeshObj.name = "MapTerrain" + name.Replace("Map", "");
         }
 
         MeshRenderer m_meshRenderer = sceneMeshObj.GetComponent<MeshRenderer>();
@@ -1084,20 +895,6 @@ public class MapLayerItem
 {
     public List<int> posList = new List<int>();
     public List<MapResourceItem> items = new List<MapResourceItem>();
-}
-
-[System.Serializable]
-public class AppointAltar
-{
-    public Vector2 pos;
-    public List<int> groups = new List<int>();
-}
-
-[System.Serializable]
-public class AppointMonster
-{
-    public Vector2 pos;
-    public List<int> groups = new List<int>();
 }
 
 public struct Collider2DEdgeConnection

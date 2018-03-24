@@ -50,32 +50,6 @@ public class ItemUtil
         }
     }
 
-    static public void GetItem(uint id)
-    {
-        if (DataManager.userData.CarryId != 0)
-        {
-            SceneManager.Instance.RandomDropItem(DataManager.userData.CarryId, 1, GameData.myself.transform.position);
-        }
-        DataManager.userData.CarryId = id;
-        EventCenter.DispatchEvent(EventEnum.UpdateCarryItem);
-    }
-
-    static public void GetDecoration(uint id)
-    {
-        if (DataManager.userData.Decorations.Contains(id))
-        {
-            SceneManager.Instance.RandomDropItem(id , 1, GameData.myself.transform.position);
-            return;
-        }
-        DataManager.userData.SetDecoration(id);
-        int level = DataManager.userData.GetDecorationLevel(id);
-        if (level <= 1)
-        {
-            DataManager.userData.SetDecorationLevel(id , 1);
-        }
-        GameData.myData.FreshDecorations();
-    }
-
     static public uint GetItemNum(uint id)
     {
         int num = 0;

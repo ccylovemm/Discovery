@@ -14,16 +14,6 @@ public class MainTip : MonoBehaviour
 
     private float missTime = 0;
 
-    private void OnEnable()
-    {
-        EventCenter.AddEvent(EventEnum.EnterLevel, OnEnterLevel);
-    }
-
-    private void OnDisable()
-    {
-        EventCenter.RemoveEvent(EventEnum.EnterLevel, OnEnterLevel);
-    }
-
     void Update()
     {
         if (Time.time > missTime)
@@ -46,14 +36,6 @@ public class MainTip : MonoBehaviour
         missTime = Time.time + time;
         msg2Txt.text = str;
         msg2.SetActive(true);
-    }
-
-    public void OnEnterLevel(EventCenterData data)
-    {
-        missTime = Time.time + 1.0f;
-        levelTip.SetActive(true);
-        worldName.text = LanguageManager.GetText(SceneManager.Instance.currLevelVo.Desc);
-        levelName.text = DataManager.userData.Group + "-" + DataManager.userData.GroupLevel;
     }
 
     public void Clear()

@@ -51,7 +51,6 @@ public class LevelResult : MonoBehaviour
         else
         {
             title.text = LanguageManager.GetText("210035");
-            level.text = SceneManager.Instance.currMapVo.Id + "-" + SceneManager.Instance.currLevelVo.Level;
             #if UNITY_IOS || UNITY_ANDROID
             adsBtn.SetActive(Advertisement.IsReady(ConfigData.AdsPlacementId));
             #else
@@ -78,18 +77,8 @@ public class LevelResult : MonoBehaviour
 
     public void OnLeave()
     {
-        if (result == LevelResultEnum.Fail)
-        {
-            GameData.myData.Reset();
-            DataManager.userData.Clear();
-            SkillManager.FreshSkillLevel();
-            SceneManager.Instance.EnterHome();
-        }
-        else
-        {
-            SceneManager.Instance.EnterScene();
-            WindowManager.Instance.CloseWindow(WindowKey.LevelResultView);
-        }
+        SceneManager.Instance.EnterScene();
+        WindowManager.Instance.CloseWindow(WindowKey.LevelResultView);
     }
 
     public void OnRevie()

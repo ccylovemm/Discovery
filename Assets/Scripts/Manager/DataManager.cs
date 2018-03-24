@@ -15,7 +15,6 @@ public class DataManager
             userData = SaveGame.Load<UserData>("DataCenter", new UserData(), serializer);
         }
         userData.Version = dataVersion;
-        userData.FreshData();
     }
 
     static public void Save()

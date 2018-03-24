@@ -36,7 +36,6 @@ public class DropItem : SceneBase
                 else
                 {
                     DataManager.userData.GoldCoin += (int)dropNum;
-                    DataManager.userData.LevelCoin += (int)dropNum;
                     GameObject.Destroy(gameObject);
                 }
             }

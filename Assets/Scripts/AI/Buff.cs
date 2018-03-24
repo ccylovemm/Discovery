@@ -36,22 +36,7 @@ public class Buff : MonoBehaviour
         }
         else if ((BuffType)buffVo.Type == BuffType.Wet)
         {
-            if (Time.time >= checkTime && Vector2.Distance(target.transform.position , lastPos) > 0.15f)
-            {
-                checkTime = Time.time + 0.05f;
-                Vector3 direct = target.transform.position - lastPos;
-                lastPos = target.transform.position;
-                if (!SceneManager.Instance.TerrainIn(lastPos , MapEditorItemType.Water))
-                {
-                    ResourceManager.Instance.LoadAsset("resourceassets/terrainEffect.assetbundle", ab =>
-                    {
-                        GameObject go = ((GameObject)GameObject.Instantiate(ab.LoadAsset("footprintWet.prefab")));
-                        go.transform.position = lastPos;
-                        go.transform.eulerAngles = new Vector3(0, 0, Vector2.Angle(direct.normalized, direct.y > 0 ? Vector2.up : Vector2.down));
-                        GameObject.Destroy(go , 2);
-                    });
-                }
-            }
+
         }
 
         if (Time.time >= lifeTime)

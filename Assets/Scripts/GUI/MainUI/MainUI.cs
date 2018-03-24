@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class MainUI : MonoBehaviour
 {
-    public List<SkillItem> skills;
-    public List<MainUISkillItem> skillItems;
     public Joystick attackJoystick;
     public Joystick moveJoystick;
     public GameObject top;
@@ -40,7 +38,6 @@ public class MainUI : MonoBehaviour
 
         if (attackJoystick != null)
         {
-            attackJoystick.TouchEvent += AttackDirect;
             attackJoystick.TouchStateEvent += AttackState;
         }
     }
@@ -48,9 +45,6 @@ public class MainUI : MonoBehaviour
     private void OnEnable()
     {
         UpdateMoney();
-        UpdateSkills();
-        UpdateElements();
-        UpdateCarryItem();
         UpdateAttackBtn(null);
         attackJoystick.gameObject.SetActive(true);
         if (SceneManager.Instance.sceneType == SceneType.Boss)
@@ -67,9 +61,6 @@ public class MainUI : MonoBehaviour
 
         EventCenter.AddEvent(EventEnum.ActionEvent, OnActionEvent);
         EventCenter.AddEvent(EventEnum.UpdateMoney, UpdateMoney);
-        EventCenter.AddEvent(EventEnum.UpdateSkill, UpdateSkills);
-        EventCenter.AddEvent(EventEnum.UpdateElement, UpdateElements);
-        EventCenter.AddEvent(EventEnum.UpdateCarryItem, UpdateCarryItem);
         EventCenter.AddEvent(EventEnum.UpdateBossHp, UpdateBossHp);
         EventCenter.AddEvent(EventEnum.UpdateMainUIAttackBtn, UpdateAttackBtn);
         EventCenter.AddEvent(EventEnum.ResetAttackJoystickPos, UpdateAttackJoystickPos);
@@ -79,9 +70,6 @@ public class MainUI : MonoBehaviour
     {
         EventCenter.RemoveEvent(EventEnum.ActionEvent, OnActionEvent);
         EventCenter.RemoveEvent(EventEnum.UpdateMoney, UpdateMoney);
-        EventCenter.RemoveEvent(EventEnum.UpdateSkill, UpdateSkills);
-        EventCenter.RemoveEvent(EventEnum.UpdateElement, UpdateElements);
-        EventCenter.RemoveEvent(EventEnum.UpdateCarryItem, UpdateCarryItem);
         EventCenter.RemoveEvent(EventEnum.UpdateBossHp, UpdateBossHp);
         EventCenter.RemoveEvent(EventEnum.UpdateMainUIAttackBtn, UpdateAttackBtn);
         EventCenter.RemoveEvent(EventEnum.ResetAttackJoystickPos, UpdateAttackJoystickPos);
@@ -152,17 +140,6 @@ public class MainUI : MonoBehaviour
         WindowManager.Instance.OpenWindow(WindowKey.PauseView);
     }
 
-    public void OnUseItem()
-    {
-        carryItemBg.SetActive(false);
-        carryItem.gameObject.SetActive(false);
-        if (DataManager.userData.CarryId != 0)
-        {
-            ItemUtil.UseItem(DataManager.userData.CarryId);
-            DataManager.userData.CarryId = 0;
-        }
-    }
-
     private void MoveDirect(Vector2 value)
     {
         if(GameData.myself != null) GameData.myself.MoveDirect(value);
@@ -171,11 +148,6 @@ public class MainUI : MonoBehaviour
     private void MoveState(bool value)
     {
         if (GameData.myself != null) GameData.myself.MoveState(value);
-    }
-
-    private void AttackDirect(Vector2 value)
-    {
-        if (GameData.myself != null) GameData.myself.AttackDirect(value);
     }
 
     private void AttackState(bool value)
@@ -250,40 +222,8 @@ public class MainUI : MonoBehaviour
             {
                 dropItem.Generate();
             }
-            else if (dropItem.itemVo.Type == 2)//如果是元素
-            {
-                int index = GameData.myData.elements.IndexOf(dropItem.itemVo.SubType);
-                if (index != -1)//相同元素
-                {
-                    SceneManager.Instance.RandomDropItem(dropItem.itemVo.SubType + 20000, 1, GameData.myself.transform.position);
-                }
-                else if (GameData.myData.elements.Count < 4)//可直接拾取
-                {
-                    GameData.myData.elements.Add(dropItem.itemVo.SubType);
-                    DataManager.userData.Elements = GameData.myData.elements;
-                }
-                else //替换操作
-                {
-                    for (int i = 0; i < skillItems.Count; i++)
-                    {
-                        skillItems[i].SetReplace(true);
-                    }
-                    dialogBtn.SetActive(false);
-                    pickupBtn.SetActive(false);
-                    attackJoystick.gameObject.SetActive(true);
-                    return;
-                }
-                UpdateElements();
-                GameObject.Destroy(dropItem.gameObject);
-            }
             else if ((ItemType)dropItem.itemVo.Type == ItemType.Item)//如果是物品
             {
-                ItemUtil.GetItem(dropItem.itemVo.Id);
-                GameObject.Destroy(dropItem.gameObject);
-            }
-            else if ((ItemType)dropItem.itemVo.Type == ItemType.Decoration)//如果是饰品
-            {
-                ItemUtil.GetDecoration(dropItem.itemVo.Id);
                 GameObject.Destroy(dropItem.gameObject);
             }
             ClearAcitonEvent();
@@ -303,136 +243,8 @@ public class MainUI : MonoBehaviour
         }
         else if(currSceneEventType == SceneEventType.EnterMap)
         {
-            if (SceneManager.Instance.sceneType == SceneType.Home)
-            {
-                DataManager.userData.LevelCoin = 0;
-                SceneManager.Instance.EnterScene();
-            }
-            else if (SceneManager.Instance.sceneType == SceneType.Boss)
-            {
-                if (LevelCFG.items.ContainsKey((DataManager.userData.Group + 1) + "" + 1))
-                {
-                    DataManager.userData.Group += 1;
-                    DataManager.userData.GroupLevel = 1;
-                }
-                else
-                {
-                    DataManager.userData.Group = 1;
-                    DataManager.userData.GroupLevel = 1;
-                }
-                DataManager.userData.EmployId = 0;
-                GameData.myData.currHp = GameData.myData.cfgVo.MaxHp;
-                DataManager.userData.Hp = GameData.myData.cfgVo.MaxHp;
-                WindowManager.Instance.OpenWindow(WindowKey.LevelResultView, new object[] { LevelResultEnum.Victory });
-            }
-            else if(SceneManager.Instance.sceneType == SceneType.Level)
-            {
-                DataManager.userData.GroupLevel += 1;
-                DataManager.userData.Hp = GameData.myData.currHp;
-                if (GameData.employ != null) DataManager.userData.EmployHp = GameData.employ.actorData.currHp;
-
-                if (!LevelCFG.items.ContainsKey(SceneManager.Instance.currLevelVo.MapId + "" + (SceneManager.Instance.currLevelVo.Level + 2)))
-                {
-                    SceneManager.Instance.EnterBoss();
-                }
-                else
-                {
-                    SceneManager.Instance.EnterScene();
-                }
-            }
             ClearAcitonEvent();
         }
-        else if(currSceneEventType == SceneEventType.AltarEvent)
-        {
-            int altarId = (int)currEventParamValues[1];
-            AltarSceneItem altarItem = (AltarSceneItem)currEventParamValues[2];
-            if (altarItem.used)
-            {
-                EventCenter.DispatchEvent(EventEnum.ShowMsg, LanguageManager.GetText("xxxxxx"));
-            }
-            else
-            {
-                altarItem.Use();
-                EventCenter.DispatchEvent(EventEnum.ShowMsg, altarId == 1 ? LanguageManager.GetText("xxxxxx") : (altarId == 2 ? LanguageManager.GetText("xxxxxx") : (altarId == 3 ? LanguageManager.GetText("xxxxxx") : LanguageManager.GetText("xxxxxx"))));
-            }
-        }
-    }
-
-    public void UpdateElements(EventCenterData data = null)
-    {
-        for (int i = 0; i< skillItems.Count; i ++)
-        {
-            skillItems[i].Clear();
-            if (i < GameData.myData.elements.Count)
-            {
-                skillItems[i].SetData(GameData.myData.elements[i]);
-            }
-        }
-    }
-
-    public void UpdateSkills(EventCenterData data = null)
-    {
-        for(int i = 0; i < skills.Count; i ++)
-        {
-            skills[i].Clear();
-        }
-
-        Dictionary<SkillElement, string> skillDic = DataManager.userData.GetSkill;
-        if (skillDic != null)
-        {
-            if (skillDic.ContainsKey(SkillElement.TwoElement))
-            {
-                skills[0].SetData(SkillCFG.items[skillDic[SkillElement.TwoElement]]);
-            }
-            if (skillDic.ContainsKey(SkillElement.ThreeElement))
-            {
-                skills[1].SetData(SkillCFG.items[skillDic[SkillElement.ThreeElement]]);
-            }
-            if (skillDic.ContainsKey(SkillElement.FourElement))
-            {
-                skills[2].SetData(SkillCFG.items[skillDic[SkillElement.FourElement]]);
-            }
-        }
-    }
-
-    public void UpdateCarryItem(EventCenterData data = null)
-    {
-        if (DataManager.userData.CarryId != 0)
-        {
-            ItemVo itemvo = ItemCFG.items[DataManager.userData.CarryId.ToString()];
-            ResourceManager.Instance.LoadIcon(itemvo.ItemIcon, icon =>
-            {
-                carryItem.sprite = icon;
-                carryItem.gameObject.SetActive(true);
-                carryItemBg.SetActive(true);
-            });
-        }
-        else
-        {
-            carryItemBg.SetActive(false);
-            carryItem.gameObject.SetActive(false);
-        }
-    }
-
-    public void ReplaceElement(uint replaceElement)
-    {
-        DropItem dropItem = (DropItem)eventItem;
-        uint skillId = dropItem.itemVo.SubType;
-        int index = GameData.myData.elements.IndexOf(replaceElement);
-        SceneManager.Instance.RandomDropItem(replaceElement + 20000, 1, GameData.myself.transform.position);
-        if (index != -1)
-        {
-            GameData.myData.elements.RemoveAt(index);
-            GameData.myData.elements.Insert(index, skillId);
-        }
-        else
-        {
-            GameData.myData.elements.Add(skillId);
-        }
-        DataManager.userData.Elements = GameData.myData.elements;
-        GameObject.Destroy(dropItem.gameObject);
-        ClearAcitonEvent();
-        UpdateElements();
     }
 
     private void ClearAcitonEvent()
@@ -440,10 +252,6 @@ public class MainUI : MonoBehaviour
         eventItem = null;
         currSceneEventType = SceneEventType.None;
         mainTip.Clear();
-        for (int i = 0; i < skillItems.Count; i++)
-        {
-            skillItems[i].SetReplace(false);
-        }
         dialogBtn.SetActive(false);
         pickupBtn.SetActive(false);
         attackJoystick.gameObject.SetActive(true);

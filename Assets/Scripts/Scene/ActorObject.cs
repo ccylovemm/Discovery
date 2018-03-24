@@ -33,8 +33,6 @@ public class ActorObject : SceneBase
     [HideInInspector]
     public Movement movement;
     [HideInInspector]
-    public MagicBase magicBase;
-    [HideInInspector]
     public Rigidbody2D rigidbody2;
     [HideInInspector]
     public SpriteRenderer bodyRender;
@@ -69,9 +67,6 @@ public class ActorObject : SceneBase
 
     public Vector3 terrainEffectLastPos;
     public int terrainEffectLastPosCount;
-
-    public List<AOEMagic> allAOEList = new List<AOEMagic>();
-    public List<BombMagic> allBombList = new List<BombMagic>();
 
     public Dictionary<uint, Buff> buffList = new Dictionary<uint, Buff>();
 
@@ -113,7 +108,6 @@ public class ActorObject : SceneBase
 
     protected void Update()
     {
-        isIceUp = MapWaterFrezon.IsFrezon(MapManager.GetGrid(mTrans.position));
 
         if (IsDead || isFrozen || isDizzy) return;
 
@@ -142,7 +136,6 @@ public class ActorObject : SceneBase
         isFrozen = bol;
         if (isFrozen)
         {
-            ClearMagic();
             animationManager.SetSpeed(0);
         }
         else
@@ -154,10 +147,6 @@ public class ActorObject : SceneBase
     public void SetDizzy(bool bol)
     {
         isDizzy = bol;
-        if (isDizzy)
-        {
-            ClearMagic();
-        }
     }
 
     public void AttackState(bool value)
@@ -168,54 +157,16 @@ public class ActorObject : SceneBase
 
         if (attackState)
         {
-            AppsFlyerUtil.Test();
-            if (GameData.myself.currSkillData != null)
-            {
-                SkillManager.Instantiate(GameData.myself, GameData.myself.currSkillData.skillVo);
-            }
-            else if (GameData.myData.angerFull)
-            {
-                SkillManager.Instantiate(GameData.myself, GameData.myData.skills[1].skillVo);
-                if (actorData.Anger > actorData.cfgVo.RageCost)
-                {
-                    actorData.Anger -= actorData.cfgVo.RageCost;
-                }
-                else
-                {
-                    actorData.Anger = 0;
-                }
-                UpdateAnger();
-            }
-            else
-            {
-                SkillManager.Instantiate(GameData.myself, GameData.myData.skills[0].skillVo);
-            }
+
         }
         else
         {
-            ClearMagic();
             GameData.myself.currSkillData = null;
             EventCenter.DispatchEvent(EventEnum.UpdateMainUIAttackBtn);
         }
         GameData.elements.Clear();
         GameData.myself.currSkillData = null;
         EventCenter.DispatchEvent(EventEnum.ClearUseSkill);
-    }
-
-    public void AttackDirect(Vector2 value)
-    {
-        if (magicBase != null)
-        {
-            magicBase.UpdateDirect(value);
-            if (value.x > 0)
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-            }
-            else if (value.x < 0)
-            {
-                transform.eulerAngles = new Vector3(0, 180, 0);
-            }
-        }
     }
 
     public void MoveState(bool value)
@@ -625,34 +576,6 @@ public class ActorObject : SceneBase
         }
        
         AddBuff(caster, damageBuffStr , damageAttributeStr);
-        ReduceHp_(caster , damageValue);
-    }
-
-    virtual protected void ReduceHp_(ActorObject caster, uint damageValue , bool isFormBuff = false)
-    {
-        if (damageValue >= actorData.currShield)
-        {
-            damageValue -= actorData.currShield;
-            actorData.currShield = 0;
-        }
-        else
-        {
-            actorData.currShield -= damageValue;
-            damageValue = 0;
-        }
-
-        //攻击怒气值
-        if (caster != null && !caster.actorData.angerFull)
-        {
-            caster.actorData.Anger += (damageValue / 20) + 1;
-            caster.UpdateAnger();
-        }
-        //受击怒气值
-        if (!isFormBuff && !actorData.angerFull)
-        {
-            actorData.Anger += (damageValue / 15) + 1;
-            UpdateAnger();
-        }
 
         if (damageValue >= actorData.currHp)
         {
@@ -758,86 +681,11 @@ public class ActorObject : SceneBase
         animationManager.Play(AnimationName.Idle);
     }
 
-    public void DropDie(Vector3 pos)
-    {
-        Die();
-        diePos = (MapManager.FindGridByRange(pos, 3, 1) + Vector2.one * 0.5f) * MapManager.textSize;
-        StartCoroutine(ShowDropDie(pos));
-    }
-
     public void DamageDie()
     {
         Die();
         diePos = transform.position;
         StartCoroutine(DelayRemove());
-    }
-
-    IEnumerator ShowDropDie(Vector3 pos)
-    {
-        yield return null;
-
-        Vector3 dir = transform.position - pos;
-
-        Vector2 grid1 = MapManager.GetGrid(pos);
-
-        if (dir.y > 0)
-        {
-            if (SceneManager.Instance.TerrainIsFall(MapManager.GetPos(new Vector2(grid1.x, grid1.y + 1))))
-            {
-                dir = new Vector3(0 , 1 , 0);
-            }
-            else
-            {
-                if (dir.x > 0)
-                {
-                    dir = new Vector3(1, 0, 0);
-                }
-                else
-                {
-                    dir = new Vector3(-1, 0, 0);
-                }
-            }
-        }
-        else
-        {
-            if (SceneManager.Instance.TerrainIsFall(MapManager.GetPos(new Vector2(grid1.x, grid1.y - 1))))
-            {
-                dir = new Vector3(0, -1, 0);
-            }
-            else
-            {
-                if (dir.x > 0)
-                {
-                    dir = new Vector3(1, 0, 0);
-                }
-                else
-                {
-                    dir = new Vector3(-1, 0, 0);
-                }
-            }
-        }
-        
-        int count = 0;
-        float color = 1.0f;
-        float distance = dir.y < 0 ? 0.016f : 0.008f;
-        while(count < 70)
-        {
-            yield return null;
-            if (count > 5)
-            {
-                transform.localScale *= 0.97f;
-                bodyRender.color = new Color(1.0f, 1.0f, 1.0f, color);
-            }
-            if (count == 5)
-            {
-                animationManager.Play(AnimationName.Death);
-            }
-            transform.position += dir.normalized * distance;
-            distance *= 0.95f;
-            color *= 0.97f;
-            count++;
-        }
-        Over();
     }
 
     IEnumerator DelayRemove()
@@ -868,7 +716,6 @@ public class ActorObject : SceneBase
     {
         StopAllCoroutines();
         IsDead = true;
-        ClearMagic();
         RemoveAllBuff();
         bodyRender.sortingLayerName = "TerrainUp";
         bodyRender.color = Color.white;
@@ -879,11 +726,8 @@ public class ActorObject : SceneBase
         GameData.allUnits.Remove(this);
         addSpeed = reduceSpeed = 1.0f;
         UpdateSpeed();
-        DataManager.userData.MonsterDie(actorData.cfgId);
         obstacleCollider.isTrigger = true;
         if (rigidbody2 != null) rigidbody2.velocity = Vector2.zero;
-
-        SceneManager.Instance.CheckLevel();
         SceneManager.Instance.RandomDrop(actorData.cfgVo.Drop, transform.position);
 
         if (master != null && master.pets.Contains(this))
@@ -894,11 +738,6 @@ public class ActorObject : SceneBase
         if (actorData.uniqueId == GameData.myData.uniqueId)
         {
             DataManager.userData.IsDead = true;
-        }
-
-        if (master != null && master.actorData.uniqueId == GameData.myData.uniqueId && actorData.cfgId == DataManager.userData.EmployId)
-        {
-            DataManager.userData.EmployId = 0;
         }
 
         if (behaviorTree != null) behaviorTree.DisableBehavior(true);
@@ -912,7 +751,6 @@ public class ActorObject : SceneBase
     {
         IsDead = true;
 
-        ClearMagic();
 
         GameData.boss.Remove(this);
         GameData.enemys.Remove(this);
@@ -926,21 +764,6 @@ public class ActorObject : SceneBase
         if (headSkill != null)
         {
             GameObject.Destroy(headSkill.gameObject);
-        }
-    }
-
-    public void ClearMagic()
-    {
-        attackState = false;
-        if (magicBase != null)
-        {
-            magicBase.MagicDestory();
-            magicBase = null;
-        }
-        hasCreateMagic = false;
-        if (!isAI)
-        {
-            MoveState(moveState);
         }
     }
 

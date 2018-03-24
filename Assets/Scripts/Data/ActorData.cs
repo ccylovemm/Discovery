@@ -24,57 +24,15 @@ public class ActorData
         cfgId = id;
         uniqueId = (uint)Random.Range(1, 1000000);
 
-        if (id > 100) //怪物
-        {
-            int count = DataManager.userData.GetMonsterDieCount(id);
-
-            ActorCFG.items.Foreach(vo =>
-            {
-                if (vo.Value.Id == id && count >= vo.Value.LevelUp)
-                {
-                    if (cfgVo == null || vo.Value.LevelUp > cfgVo.LevelUp)
-                    {
-                        cfgVo = vo.Value;
-                    }
-                }
-            });
-        }
-        else //角色
-        {
-            cfgVo = ActorCFG.items[id + "" + DataManager.userData.actor.level];
-        }
+        cfgVo =  ActorCFG.items[id.ToString()];
 
         Reset();
     }
 
-    public uint Anger
-    {
-        get
-        {
-            return currAnger;
-        }
-        set
-        {
-            currAnger = value;
-            if (currAnger > cfgVo.RageMax)
-            {
-                currAnger = cfgVo.RageMax;
-            }
-            if (currAnger == 0)
-            {
-                angerFull = false;
-            }
-            else if (currAnger >= cfgVo.RageMax)
-            {
-                angerFull = true;
-            }
-        }
-    }
 
     public void Reset()
     {
         currHp = cfgVo.MaxHp;
-        Anger = 0;
         skills.Clear();
         elements.Clear();
         string[] s = cfgVo.Skills.Split(',');
@@ -103,18 +61,6 @@ public class ActorData
             {
                 elements.Add(uint.Parse(s[i]));
             }
-        }
-
-        FreshDecorations();
-    }
-
-    public void FreshDecorations()
-    {
-        decorations.Clear();
-        for (int i = 0; i < DataManager.userData.Decorations.Count; i++)
-        {
-            uint id = DataManager.userData.Decorations[i];
-            decorations.Add(DecorationCFG.items[id + "" + DataManager.userData.GetDecorationLevel(id)]);
         }
     }
 }
