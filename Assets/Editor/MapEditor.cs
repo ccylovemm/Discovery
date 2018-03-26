@@ -28,7 +28,7 @@ public class MapEditor : EditorWindow
     private int mapSizeX = 20;
     private int mapSizeY = 20;
 
-    private MapWorldResource worldResource = MapWorldResource.World1;
+    private WorldType worldType = WorldType.World1;
 
     void OnFocus()
     {
@@ -56,15 +56,15 @@ public class MapEditor : EditorWindow
         GUILayout.BeginHorizontal();
 
         GUILayout.BeginVertical();
-        worldResource = (MapWorldResource)EditorGUILayout.EnumPopup(worldResource, GUILayout.Width(100));
+        worldType = (WorldType)EditorGUILayout.EnumPopup(worldType, GUILayout.Width(100));
         if (GUILayout.Button("创建新的地图块", GUILayout.Width(100), GUILayout.Height(30)))
         {
-            currMapScene = new GameObject("Map" + Random.Range(1 , 10000)).AddComponent<MapScene>();
+            currMapScene = new GameObject("Map" + (mapSceneList.Count + 1)).AddComponent<MapScene>();
             currMapScene.offsetX = offsetX;
             currMapScene.offsetY = offsetY;
             currMapScene.mapSizeX = mapSizeX;
             currMapScene.mapSizeY = mapSizeY;
-            currMapScene.worldResource = worldResource;
+            currMapScene.worldType = worldType;
             mapSceneList.Add(currMapScene);
             FreshResource();
         }
@@ -101,12 +101,23 @@ public class MapEditor : EditorWindow
         if (currMapScene != null)
         {
             GUILayout.BeginHorizontal();
+
+            GUILayout.BeginVertical();
+            GUILayout.Label("地图宽度：" + currMapScene.mapSizeX, GUILayout.Width(100));
+            GUILayout.Label("地图高度：" + currMapScene.mapSizeY, GUILayout.Width(100));
+            GUILayout.EndVertical();
+
+            GUILayout.BeginVertical();
+            GUILayout.BeginHorizontal();
             GUILayout.Label("地图偏移X：", GUILayout.Width(60));
             currMapScene.offsetX = EditorGUILayout.IntField(currMapScene.offsetX, GUILayout.Width(60));
             GUILayout.EndHorizontal();
             GUILayout.BeginHorizontal();
             GUILayout.Label("地图偏移Y：", GUILayout.Width(60));
             currMapScene.offsetY = EditorGUILayout.IntField(currMapScene.offsetY, GUILayout.Width(60));
+            GUILayout.EndHorizontal();
+            GUILayout.EndVertical();
+
             GUILayout.EndHorizontal();
         }
 
@@ -152,7 +163,7 @@ public class MapEditor : EditorWindow
             int count = 0;
             for (int i = 0; i < mapResouceList.Count; i++)
             {
-                if (mapResouceList[i].worldResource != MapWorldResource.None && mapResouceList[i].worldResource != currMapScene.worldResource) continue;
+                if (mapResouceList[i].worldType != WorldType.None && mapResouceList[i].worldType != currMapScene.worldType) continue;
                 if (count % 7 == 0)
                 {
                     GUILayout.BeginHorizontal();
@@ -217,8 +228,9 @@ public class MapEditor : EditorWindow
         Vector3 mousepos = Event.current.mousePosition;
         mousepos.y = sceneView.camera.pixelHeight - mousepos.y;
         mousepos = sceneView.camera.ScreenToWorldPoint(mousepos);
+
         Vector2 grid = MapManager.GetGrid(mousepos.x, mousepos.y);
-        if (grid.x < currMapScene.offsetX || grid.y < currMapScene.offsetY || grid.x >= currMapScene.mapSizeX + currMapScene.offsetX || grid.y >= currMapScene.mapSizeY + currMapScene.mapSizeY) return;
+        if (grid.x < currMapScene.offsetX || grid.y < currMapScene.offsetY || grid.x >= currMapScene.mapSizeX + currMapScene.offsetX || grid.y >= currMapScene.mapSizeY + currMapScene.offsetY) return;
 
         HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
 
@@ -383,18 +395,23 @@ public class MapEditor : EditorWindow
         {
             filePath = EditorUtility.SaveFilePanel("保存", filePath, "", "asset");
             if (string.IsNullOrEmpty(filePath) || !filePath.Contains(".asset")) return;
-            MapSceneAsset newData = ScriptableObject.CreateInstance<MapSceneAsset>();
-            newData.offsetX = currMapScene.offsetX;
-            newData.offsetY = currMapScene.offsetY;
-            newData.mapSizeX = currMapScene.mapSizeX;
-            newData.mapSizeY = currMapScene.mapSizeY;
-            newData.worldResource = currMapScene.worldResource;
-            newData.layers = new List<MapEditorSortLayer>(currMapScene.layers);
-            for (int i = 0; i < currMapScene.layerItems.Count; i++)
+            MapWorldAsset newData = ScriptableObject.CreateInstance<MapWorldAsset>();
+            for(int i = 0; i < mapSceneList.Count; i ++)
             {
-                newData.layerItems.Add(new MapLayerItem());
-                newData.layerItems[i].posList = new List<int>(currMapScene.layerItems[i].posList);
-                newData.layerItems[i].items = new List<MapResourceItem>(currMapScene.layerItems[i].items);
+                MapSceneAsset mapSceneAsset = new MapSceneAsset();
+                mapSceneAsset.offsetX = mapSceneList[i].offsetX;
+                mapSceneAsset.offsetY = mapSceneList[i].offsetY;
+                mapSceneAsset.mapSizeX = mapSceneList[i].mapSizeX;
+                mapSceneAsset.mapSizeY = mapSceneList[i].mapSizeY;
+                mapSceneAsset.worldType = mapSceneList[i].worldType;
+                mapSceneAsset.layers = new List<MapEditorSortLayer>(mapSceneList[i].layers);
+
+                for (int n = 0; n < mapSceneList[n].layerItems.Count; n++)
+                {
+                    mapSceneAsset.layerItems.Add(new MapLayerItem());
+                    mapSceneAsset.layerItems[n].posList = new List<int>(mapSceneList[n].layerItems[n].posList);
+                    mapSceneAsset.layerItems[n].items = new List<MapResourceItem>(mapSceneList[n].layerItems[n].items);
+                }
             }
             AssetDatabase.CreateAsset(newData, "Assets" + filePath.Replace(Application.dataPath, ""));
             AssetDatabase.SaveAssets();
@@ -406,27 +423,30 @@ public class MapEditor : EditorWindow
     {
         filePath = EditorUtility.OpenFilePanel("打开", filePath, "asset");
         if (string.IsNullOrEmpty(filePath) || !filePath.Contains(".asset")) return;
-        MapSceneAsset mapPrefabAsset = (MapSceneAsset)AssetDatabase.LoadAssetAtPath("Assets" + filePath.Replace(Application.dataPath, ""), typeof(MapSceneAsset));
-        if (mapPrefabAsset != null)
+        MapWorldAsset mapWorldAsset = (MapWorldAsset)AssetDatabase.LoadAssetAtPath("Assets" + filePath.Replace(Application.dataPath, ""), typeof(MapWorldAsset));
+        if (mapWorldAsset != null)
         {
-            currMapScene = new GameObject("Map" + Random.Range(1, 10000)).AddComponent<MapScene>();
-            currMapScene.offsetX = mapPrefabAsset.offsetX;
-            currMapScene.offsetY = mapPrefabAsset.offsetY;
-            currMapScene.mapSizeX = mapPrefabAsset.mapSizeX;
-            currMapScene.mapSizeY = mapPrefabAsset.mapSizeY;
-            currMapScene.worldResource = mapPrefabAsset.worldResource;
-            currMapScene.layers = new List<MapEditorSortLayer>(mapPrefabAsset.layers);
-            for (int i = 0; i < mapPrefabAsset.layerItems.Count; i ++)
+            for (int i = 0; i < mapWorldAsset.mapScenes.Count; i ++)
             {
-                currMapScene.layerItems.Add(new MapLayerItem());
-                currMapScene.layerItems[i].posList = new List<int>(mapPrefabAsset.layerItems[i].posList);
-                currMapScene.layerItems[i].items = new List<MapResourceItem>(mapPrefabAsset.layerItems[i].items);
+                currMapScene = new GameObject("Map" + (i + 1)).AddComponent<MapScene>();
+                currMapScene.offsetX = mapWorldAsset.mapScenes[i].offsetX;
+                currMapScene.offsetY = mapWorldAsset.mapScenes[i].offsetY;
+                currMapScene.mapSizeX = mapWorldAsset.mapScenes[i].mapSizeX;
+                currMapScene.mapSizeY = mapWorldAsset.mapScenes[i].mapSizeY;
+                currMapScene.worldType = mapWorldAsset.mapScenes[i].worldType;
+                currMapScene.layers = new List<MapEditorSortLayer>(mapWorldAsset.mapScenes[i].layers);
+                for (int n = 0; n < mapWorldAsset.mapScenes[n].layerItems.Count; n++)
+                {
+                    currMapScene.layerItems.Add(new MapLayerItem());
+                    currMapScene.layerItems[n].posList = new List<int>(mapWorldAsset.mapScenes[n].layerItems[n].posList);
+                    currMapScene.layerItems[n].items = new List<MapResourceItem>(mapWorldAsset.mapScenes[n].layerItems[n].items);
+                }
+                mapSceneList.Add(currMapScene);
+                currMapScene.FreshMapGrid();
+                currMapScene.UpdateMap();
             }
-            mapSceneList.Add(currMapScene);
-            FreshResource();
-            currMapScene.FreshMapGrid();
-            currMapScene.UpdateMap();
         }
+        FreshResource();
     }
 
     private string filePath_ = "";

@@ -118,7 +118,7 @@ public enum SkillElement
     FourElement = 4,
 }
 
-public enum MapWorldResource
+public enum WorldType
 {
     None = 0,
     World1 = 1,

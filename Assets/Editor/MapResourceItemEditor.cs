@@ -52,7 +52,7 @@ public class MapResourceItemEditor : Editor
         GUILayout.EndVertical();
 
         GUILayout.BeginHorizontal();
-        resourceItem.worldResource = (MapWorldResource)EditorGUILayout.EnumPopup(resourceItem.worldResource, GUILayout.Width(100));
+        resourceItem.worldType = (WorldType)EditorGUILayout.EnumPopup(resourceItem.worldType, GUILayout.Width(100));
         resourceItem.isPrefab = GUILayout.Toggle(resourceItem.isPrefab, "是否已经定制好了");
         resourceItem.isPath = GUILayout.Toggle(resourceItem.isPath, "是否可寻路");
 

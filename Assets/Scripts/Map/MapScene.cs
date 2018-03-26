@@ -15,7 +15,7 @@ public class MapScene : MonoBehaviour
     public int mapSizeX;
     public int mapSizeY;
 
-    public MapWorldResource worldResource;
+    public WorldType worldType;
 
     public List<MapLayerItem> layerItems = new List<MapLayerItem>();
     public List<MapEditorSortLayer> layers = new List<MapEditorSortLayer>();
@@ -152,7 +152,7 @@ public class MapScene : MonoBehaviour
                     if (mapLayerItem.items[j].isPrefab)
                     {
                         GameObject go = GameObject.Instantiate(mapLayerItem.items[j].gameObject);
-                        go.transform.position = MapManager.GetPos(x, y);
+                        go.transform.position = MapManager.GetPos(x + offsetX, y + offsetY);
                         generatePrefabItems.Add(go);
                     }
                     else
@@ -802,7 +802,7 @@ public class MapScene : MonoBehaviour
         sceneMeshObj = GameObject.Find("MapTerrain" + name.Replace("Map" , ""));
         if (sceneMeshObj == null)
         {
-            sceneMeshObj = GameObject.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/ResourceAssets/Prefabs/Map/World" + (int)worldResource + ".prefab"));
+            sceneMeshObj = GameObject.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/ResourceAssets/Prefabs/Map/World" + (int)worldType + ".prefab"));
             sceneMeshObj.name = "MapTerrain" + name.Replace("Map", "");
         }
 
@@ -829,7 +829,7 @@ public class MapScene : MonoBehaviour
     {
         ResourceManager.Instance.LoadAsset("resourceassets/map.assetbundle", map =>
         {
-            sceneMeshObj = GameObject.Instantiate((GameObject)map.LoadAsset("World" + (int)worldResource + ".prefab"));
+            sceneMeshObj = GameObject.Instantiate((GameObject)map.LoadAsset("World" + (int)worldType + ".prefab"));
             sceneMeshObj.name = "SceneMeshCombine";
             MeshRenderer m_meshRenderer = sceneMeshObj.GetComponent<MeshRenderer>();
             m_meshRenderer.sortingLayerName = "TerrainDown";

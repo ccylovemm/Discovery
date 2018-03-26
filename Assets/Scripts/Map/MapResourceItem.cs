@@ -18,9 +18,10 @@ public class MapResourceItem : MonoBehaviour
     public MapResourceItem replaceEdgeRightUp;
     public MapResourceItem replaceEdgeVer;
 
+    public WorldType worldType;
+
     public MapEditorSortLayer layer;
     public MapEditorItemType itemType;
-    public MapWorldResource worldResource;
 
     public List<MapSprite> currList = new List<MapSprite>();
 
