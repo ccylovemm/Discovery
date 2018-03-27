@@ -4,63 +4,21 @@ using UnityEngine;
 
 public class ItemUtil
 {
-    static public void UseItem(uint id)
-    {
-        ItemVo itemVo = ItemCFG.items[id.ToString()];
-        if ((ItemType)itemVo.Type == ItemType.Item)
-        {
-            if ((ItemSubType)itemVo.SubType == ItemSubType.AddHp)
-            {
-                uint hpNum = uint.Parse(ItemCFG.items[id.ToString()].ParamValue);
-                // 饰品 击杀 回复血量
-                if (GameData.myself.actorData.decorations.Count > 0)
-                {
-                    int count = GameData.myself.actorData.decorations.Count;
-                    for (int i = 0; i < count; i++)
-                    {
-                        DecorationVo decorationVo = GameData.myself.actorData.decorations[i];
-                        if ((DecorationType)decorationVo.Type == DecorationType.UseBloodAdd)
-                        {
-                            hpNum += (uint)(hpNum * decorationVo.Parameter);
-                        }
-                    }
-                }
-                GameData.myself.AddHp(hpNum);
-            }
-            else if ((ItemSubType)itemVo.SubType == ItemSubType.DeBuff)
-            {
-                string[] buffs = itemVo.ParamValue.Split(',');
-                for (int i = 0; i < buffs.Length; i ++)
-                {
-                    GameData.myself.DeleteBuff(uint.Parse(buffs[i]));
-                }
-            }
-        }
-    }
-
-    static public void CostItem(uint id , int num)
+    static public void CostItem(uint id , uint num)
     {
         if (id == 1)
         {
-            DataManager.userData.GoldCoin -= num;
-        }
-        else if (id == 2)
-        {
-            DataManager.userData.Diamond -= num;
+            GameData.gameCoin -= num;
         }
     }
 
     static public uint GetItemNum(uint id)
     {
-        int num = 0;
+        uint num = 0;
         if (id == 1)
         {
-            num = DataManager.userData.GoldCoin;
+            num = GameData.gameCoin;
         }
-        else if (id == 2)
-        {
-            num = DataManager.userData.Diamond;
-        }
-        return (uint)num;
+        return num;
     }
 }

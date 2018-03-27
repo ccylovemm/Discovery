@@ -4,79 +4,48 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # http://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:c45b0a69a496ea9fd95481aca53f7ad0:eba21979ff3a326da1200f174199748f:cbb2bf81bc3cdca219ebe3c0f44012da$
+# $TexturePacker:SmartUpdate:6636ebca143438fadf1df4da7b2f5359:895cb0e62f196945afaebd127cea1bbd:cbb2bf81bc3cdca219ebe3c0f44012da$
 #
 :format=40300
 :texture=Hero1.png
-:size=256x512
+:size=256x256
 :pivotpoints=enabled
 :borders=disabled
 
-Cast_Run/Hero5_castRun_00;1;482;37;29; 0.5;0.5; 0;0;0;0
-Cast_Run/Hero5_castRun_01;40;482;37;29; 0.5;0.5; 0;0;0;0
-Cast_Run/Hero5_castRun_02;79;482;37;29; 0.5;0.5; 0;0;0;0
-Cast_Run/Hero5_castRun_03;118;482;37;29; 0.5;0.5; 0;0;0;0
-Cast_Run/Hero5_castRun_04;157;482;37;29; 0.5;0.5; 0;0;0;0
-Cast_Run/Hero5_castRun_05;196;482;37;29; 0.5;0.5; 0;0;0;0
-Cast_Run/Hero5_castRun_06;1;451;37;29; 0.5;0.5; 0;0;0;0
-Cast_Run/Hero5_castRun_07;40;451;37;29; 0.5;0.5; 0;0;0;0
-Cast_Stand/Hero5_castStand_00;79;451;37;29; 0.5;0.5; 0;0;0;0
-Cast_Stand/Hero5_castStand_01;118;451;37;29; 0.5;0.5; 0;0;0;0
-Cast_Stand/Hero5_castStand_02;157;451;37;29; 0.5;0.5; 0;0;0;0
-Cast_Stand/Hero5_castStand_03;196;451;37;29; 0.5;0.5; 0;0;0;0
-Cast_Stand/Hero5_castStand_04;1;420;37;29; 0.5;0.5; 0;0;0;0
-Cast_Stand/Hero5_castStand_05;40;420;37;29; 0.5;0.5; 0;0;0;0
-Cast_Stand/Hero5_castStand_06;79;420;37;29; 0.5;0.5; 0;0;0;0
-Cast_Stand/Hero5_castStand_07;118;420;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_00;157;420;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_01;196;420;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_02;1;389;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_03;40;389;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_04;79;389;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_05;118;389;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_06;157;389;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_07;196;389;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_08;1;358;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_09;40;358;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_10;79;358;37;29; 0.5;0.5; 0;0;0;0
-Dead/Hero5_dead_11;118;358;37;29; 0.5;0.5; 0;0;0;0
-Idle/Hero5_idle_00;157;358;37;29; 0.5;0.5; 0;0;0;0
-Idle/Hero5_idle_01;196;358;37;29; 0.5;0.5; 0;0;0;0
-Idle/Hero5_idle_02;1;327;37;29; 0.5;0.5; 0;0;0;0
-Idle/Hero5_idle_03;40;327;37;29; 0.5;0.5; 0;0;0;0
-Idle/Hero5_idle_04;79;327;37;29; 0.5;0.5; 0;0;0;0
-Idle/Hero5_idle_05;118;327;37;29; 0.5;0.5; 0;0;0;0
-Idle/Hero5_idle_06;157;327;37;29; 0.5;0.5; 0;0;0;0
-Idle/Hero5_idle_07;196;327;37;29; 0.5;0.5; 0;0;0;0
-Parry_run/Hero5_parryRun_00;79;265;37;29; 0.5;0.5; 0;0;0;0
-Parry_run/Hero5_parryRun_01;118;265;37;29; 0.5;0.5; 0;0;0;0
-Parry_run/Hero5_parryRun_02;157;265;37;29; 0.5;0.5; 0;0;0;0
-Parry_run/Hero5_parryRun_03;196;265;37;29; 0.5;0.5; 0;0;0;0
-Parry_run/Hero5_parryRun_04;1;234;37;29; 0.5;0.5; 0;0;0;0
-Parry_run/Hero5_parryRun_05;40;234;37;29; 0.5;0.5; 0;0;0;0
-Parry_run/Hero5_parryRun_06;79;234;37;29; 0.5;0.5; 0;0;0;0
-Parry_run/Hero5_parryRun_07;118;234;37;29; 0.5;0.5; 0;0;0;0
-Parry_Stand/Hero5_parryStand_00;1;296;37;29; 0.5;0.5; 0;0;0;0
-Parry_Stand/Hero5_parryStand_01;40;296;37;29; 0.5;0.5; 0;0;0;0
-Parry_Stand/Hero5_parryStand_02;79;296;37;29; 0.5;0.5; 0;0;0;0
-Parry_Stand/Hero5_parryStand_03;118;296;37;29; 0.5;0.5; 0;0;0;0
-Parry_Stand/Hero5_parryStand_04;157;296;37;29; 0.5;0.5; 0;0;0;0
-Parry_Stand/Hero5_parryStand_05;196;296;37;29; 0.5;0.5; 0;0;0;0
-Parry_Stand/Hero5_parryStand_06;1;265;37;29; 0.5;0.5; 0;0;0;0
-Parry_Stand/Hero5_parryStand_07;40;265;37;29; 0.5;0.5; 0;0;0;0
-ReturnSword/Hero5_returnSword_00;157;234;37;29; 0.5;0.5; 0;0;0;0
-ReturnSword/Hero5_returnSword_01;196;234;37;29; 0.5;0.5; 0;0;0;0
-ReturnSword/Hero5_returnSword_02;1;203;37;29; 0.5;0.5; 0;0;0;0
-ReturnSword/Hero5_returnSword_03;1;172;37;29; 0.5;0.5; 0;0;0;0
-ReturnSword/Hero5_returnSword_04;1;141;37;29; 0.5;0.5; 0;0;0;0
-ReturnSword/Hero5_returnSword_05;1;110;37;29; 0.5;0.5; 0;0;0;0
-ReturnSword/Hero5_returnSword_06;1;79;37;29; 0.5;0.5; 0;0;0;0
-ReturnSword/Hero5_returnSword_07;1;48;37;29; 0.5;0.5; 0;0;0;0
-Run/Hero5_run_00;1;17;37;29; 0.5;0.5; 0;0;0;0
-Run/Hero5_run_01;40;203;37;29; 0.5;0.5; 0;0;0;0
-Run/Hero5_run_02;79;203;37;29; 0.5;0.5; 0;0;0;0
-Run/Hero5_run_03;118;203;37;29; 0.5;0.5; 0;0;0;0
-Run/Hero5_run_04;157;203;37;29; 0.5;0.5; 0;0;0;0
-Run/Hero5_run_05;196;203;37;29; 0.5;0.5; 0;0;0;0
-Run/Hero5_run_06;40;172;37;29; 0.5;0.5; 0;0;0;0
-Run/Hero5_run_07;79;172;37;29; 0.5;0.5; 0;0;0;0
+Attack/Hero1_Attack_01;1;226;37;29; 0.5;0.5; 0;0;0;0
+Attack/Hero1_Attack_02;40;226;37;29; 0.5;0.5; 0;0;0;0
+Attack/Hero1_Attack_03;79;226;37;29; 0.5;0.5; 0;0;0;0
+Attack/Hero1_Attack_04;118;226;37;29; 0.5;0.5; 0;0;0;0
+Attack/Hero1_Attack_05;157;226;37;29; 0.5;0.5; 0;0;0;0
+Attack/Hero1_Attack_06;196;226;37;29; 0.5;0.5; 0;0;0;0
+Attack/Hero1_Attack_07;1;195;37;29; 0.5;0.5; 0;0;0;0
+Attack/Hero1_Attack_08;1;164;37;29; 0.5;0.5; 0;0;0;0
+Attack/Hero1_Attack_09;1;133;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_00;1;102;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_01;1;71;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_02;1;40;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_03;1;9;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_04;40;195;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_05;79;195;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_06;118;195;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_07;157;195;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_08;196;195;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_09;40;164;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_10;40;133;37;29; 0.5;0.5; 0;0;0;0
+Dead/Hero1_dead_11;40;102;37;29; 0.5;0.5; 0;0;0;0
+Idle/Hero1_idle_00;40;71;37;29; 0.5;0.5; 0;0;0;0
+Idle/Hero1_idle_01;40;40;37;29; 0.5;0.5; 0;0;0;0
+Idle/Hero1_idle_02;40;9;37;29; 0.5;0.5; 0;0;0;0
+Idle/Hero1_idle_03;79;164;37;29; 0.5;0.5; 0;0;0;0
+Idle/Hero1_idle_04;118;164;37;29; 0.5;0.5; 0;0;0;0
+Idle/Hero1_idle_05;157;164;37;29; 0.5;0.5; 0;0;0;0
+Idle/Hero1_idle_06;196;164;37;29; 0.5;0.5; 0;0;0;0
+Idle/Hero1_idle_07;79;133;37;29; 0.5;0.5; 0;0;0;0
+Run/Hero1_run_00;118;133;37;29; 0.5;0.5; 0;0;0;0
+Run/Hero1_run_01;157;133;37;29; 0.5;0.5; 0;0;0;0
+Run/Hero1_run_02;196;133;37;29; 0.5;0.5; 0;0;0;0
+Run/Hero1_run_03;79;102;37;29; 0.5;0.5; 0;0;0;0
+Run/Hero1_run_04;79;71;37;29; 0.5;0.5; 0;0;0;0
+Run/Hero1_run_05;79;40;37;29; 0.5;0.5; 0;0;0;0
+Run/Hero1_run_06;79;9;37;29; 0.5;0.5; 0;0;0;0
+Run/Hero1_run_07;118;102;37;29; 0.5;0.5; 0;0;0;0

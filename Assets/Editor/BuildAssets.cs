@@ -62,17 +62,12 @@ public class BuildAssets
     {
         SetBundleConfig("/ResourceAssets/Prefabs/Avatar/" , "*.prefab" , "resourceassets/avatar.assetbundle");
         SetBundleConfig("/ResourceAssets/Prefabs/Map/", "*.prefab", "resourceassets/map.assetbundle");
-        SetBundleConfig("/ResourceAssets/Prefabs/TerrainEffect/", "*.prefab", "resourceassets/terrainEffect.assetbundle");
         SetBundleConfig("/ResourceAssets/Prefabs/GUI/", "*.prefab", "resourceassets/gui.assetbundle");
         SetBundleConfig("/ResourceAssets/Prefabs/Item/", "*.prefab", "resourceassets/item.assetbundle");
         SetBundleConfig("/ResourceAssets/Map/", "*.unity", "");
         SetBundleConfig("/ResourceAssets/Prefabs/Status/", "*.prefab", "resourceassets/buff.assetbundle");
-        SetBundleConfig("/ResourceAssets/Prefabs/Magic/", "*.prefab", "");
         SetBundleConfig("/ResourceAssets/Config/", "*.json", "resourceassets/configassets.assetbundle");
-        SetBundleConfig("/ResourceAssets/MapConfig/", "*.asset", "resourceassets/configassets.assetbundle");
-        SetBundleConfig("/ResourceAssets/MapStyleConfig/", "*.asset", "resourceassets/configassets.assetbundle");
         SetBundleConfig("/ResourceAssets/AI/", "*.asset", "resourceassets/configassets.assetbundle");
-        SetBundleConfig("/ResourceAssets/Sounds/", "*.mp3", "resourceassets/soundassets.assetbundle");
         SetBundleConfig("/ResourceAssets/Atlas", "*.png", "");
     }
 

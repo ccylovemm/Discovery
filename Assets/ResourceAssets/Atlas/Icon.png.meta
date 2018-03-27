@@ -49,6 +49,51 @@ TextureImporter:
     21300084: TalentIcon3
     21300086: TalentIcon4
     21300088: TalentIcon5
+    21300090: Ability_Ambush
+    21300092: Ability_BackStab
+    21300094: Ability_CriticalStrike
+    21300096: Ability_Defend
+    21300098: Ability_Druid_Bash
+    21300100: Ability_Druid_CatForm
+    21300102: Ability_Druid_ChallangingRoar
+    21300104: Ability_Druid_Rake
+    21300106: Ability_DualWield
+    21300108: Ability_GolemStormBolt
+    21300110: Ability_Gouge
+    21300112: Ability_Hunter_AimedShot
+    21300114: ability_rogue_reinforcedleather
+    21300116: ABILITY_SEARINGARROW
+    21300118: Ability_TheBlackArrow
+    21300120: Ability_Throw
+    21300122: Ability_UpgradeMoonGlaive
+    21300124: Ability_Warrior_PunishingBlow
+    21300126: Ability_Warrior_SavageBlow
+    21300128: Ability_Warrior_TitansGrip
+    21300130: Ability_Whirlwind
+    21300132: INV_Boots_Plate_DungeonPlate_C_04
+    21300134: INV_Boots_Plate_DungeonPlate_C_05
+    21300136: INV_Boots_Plate_DungeonPlate_C_07
+    21300138: INV_Chest_Chain_07
+    21300140: INV_Chest_Cloth_22
+    21300142: INV_Chest_Cloth_Reputation_C_01
+    21300144: INV_Misc_Book_01
+    21300146: INV_Misc_Book_02
+    21300148: INV_Misc_Book_03
+    21300150: INV_Misc_Book_04
+    21300152: INV_Misc_Book_05
+    21300154: INV_Misc_Book_06
+    21300156: INV_Misc_Book_07
+    21300158: INV_Misc_Book_08
+    21300160: INV_Misc_Book_09
+    21300162: INV_Misc_Book_10
+    21300164: INV_Misc_Book_11
+    21300166: INV_Misc_Cape_07
+    21300168: INV_Misc_Cape_08
+    21300170: INV_Misc_Cape_09
+    21300172: INV_Misc_Key_01
+    21300174: INV_Misc_Key_02
+    21300176: INV_Misc_Key_03
+    21300178: INV_Misc_Key_04
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -131,546 +176,585 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: btn_spell_1
+      name: Ability_Ambush
       rect:
         serializedVersion: 2
         x: 1
-        y: 579
-        width: 106
-        height: 106
+        y: 381
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: btn_spell_2
+      name: Ability_BackStab
       rect:
         serializedVersion: 2
-        x: 109
-        y: 579
-        width: 106
-        height: 106
+        x: 1
+        y: 315
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: btn_spell_3
+      name: Ability_CriticalStrike
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 249
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Ability_Defend
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 183
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Ability_Druid_Bash
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 117
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Ability_Druid_CatForm
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 51
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Ability_Druid_ChallangingRoar
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 447
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Ability_Druid_Rake
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 447
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Ability_DualWield
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 447
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Ability_GolemStormBolt
       rect:
         serializedVersion: 2
         x: 265
-        y: 485
-        width: 106
-        height: 106
+        y: 447
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: btn_spell_4
+      name: Ability_Gouge
       rect:
         serializedVersion: 2
-        x: 373
-        y: 485
-        width: 106
-        height: 106
+        x: 331
+        y: 447
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: btn_spell_5
+      name: Ability_Hunter_AimedShot
       rect:
         serializedVersion: 2
-        x: 1
-        y: 471
-        width: 106
-        height: 106
+        x: 397
+        y: 447
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: btn_spell_6
+      name: ability_rogue_reinforcedleather
       rect:
         serializedVersion: 2
-        x: 109
-        y: 471
-        width: 106
-        height: 106
+        x: 397
+        y: 183
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: btn_spell_7
-      rect:
-        serializedVersion: 2
-        x: 217
-        y: 377
-        width: 106
-        height: 106
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_spell_8
-      rect:
-        serializedVersion: 2
-        x: 325
-        y: 377
-        width: 106
-        height: 106
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_spellClick_1
-      rect:
-        serializedVersion: 2
-        x: 273
-        y: 917
-        width: 106
-        height: 106
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_spellClick_2
-      rect:
-        serializedVersion: 2
-        x: 381
-        y: 917
-        width: 106
-        height: 106
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_spellClick_3
-      rect:
-        serializedVersion: 2
-        x: 273
-        y: 809
-        width: 106
-        height: 106
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_spellClick_4
-      rect:
-        serializedVersion: 2
-        x: 381
-        y: 809
-        width: 106
-        height: 106
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_spellClick_5
-      rect:
-        serializedVersion: 2
-        x: 273
-        y: 701
-        width: 106
-        height: 106
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_spellClick_6
-      rect:
-        serializedVersion: 2
-        x: 381
-        y: 701
-        width: 106
-        height: 106
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_spellClick_7
-      rect:
-        serializedVersion: 2
-        x: 273
-        y: 593
-        width: 106
-        height: 106
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_spellClick_8
-      rect:
-        serializedVersion: 2
-        x: 381
-        y: 593
-        width: 106
-        height: 106
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: HeadIcon1
+      name: ABILITY_SEARINGARROW
       rect:
         serializedVersion: 2
         x: 1
-        y: 687
-        width: 270
-        height: 336
+        y: 447
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: HeadIcon2
+      name: Ability_TheBlackArrow
       rect:
         serializedVersion: 2
-        x: 1
-        y: 687
-        width: 270
-        height: 336
+        x: 67
+        y: 381
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: HeadIcon3
+      name: Ability_Throw
       rect:
         serializedVersion: 2
-        x: 1
-        y: 687
-        width: 270
-        height: 336
+        x: 67
+        y: 315
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_creditBlueUI
+      name: Ability_UpgradeMoonGlaive
       rect:
         serializedVersion: 2
-        x: 217
-        y: 541
-        width: 44
-        height: 48
+        x: 67
+        y: 249
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_creditGoldUI
+      name: Ability_Warrior_PunishingBlow
       rect:
         serializedVersion: 2
-        x: 217
-        y: 495
-        width: 44
-        height: 44
+        x: 67
+        y: 183
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_Element_1
+      name: Ability_Warrior_SavageBlow
       rect:
         serializedVersion: 2
-        x: 489
-        y: 866
-        width: 15
-        height: 18
+        x: 67
+        y: 117
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_Element_2
+      name: Ability_Warrior_TitansGrip
       rect:
         serializedVersion: 2
-        x: 489
-        y: 790
-        width: 11
-        height: 18
+        x: 67
+        y: 51
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_Element_3
+      name: Ability_Whirlwind
       rect:
         serializedVersion: 2
-        x: 489
-        y: 954
-        width: 17
-        height: 16
+        x: 133
+        y: 381
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_Element_4
+      name: INV_Boots_Plate_DungeonPlate_C_04
       rect:
         serializedVersion: 2
-        x: 489
-        y: 810
-        width: 13
-        height: 17
+        x: 199
+        y: 381
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_Element_5
+      name: INV_Boots_Plate_DungeonPlate_C_05
       rect:
         serializedVersion: 2
-        x: 489
-        y: 991
-        width: 17
-        height: 17
+        x: 265
+        y: 381
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_Element_6
+      name: INV_Boots_Plate_DungeonPlate_C_07
       rect:
         serializedVersion: 2
-        x: 489
-        y: 847
-        width: 15
-        height: 17
+        x: 331
+        y: 381
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_Element_7
+      name: INV_Chest_Chain_07
       rect:
         serializedVersion: 2
-        x: 489
-        y: 1010
-        width: 19
-        height: 13
+        x: 397
+        y: 381
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_Element_8
+      name: INV_Chest_Cloth_22
       rect:
         serializedVersion: 2
-        x: 489
-        y: 972
-        width: 17
-        height: 17
+        x: 133
+        y: 315
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_largePotion
+      name: INV_Chest_Cloth_Reputation_C_01
       rect:
         serializedVersion: 2
-        x: 489
-        y: 918
-        width: 16
-        height: 16
+        x: 133
+        y: 249
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_midPotion
+      name: INV_Misc_Book_01
       rect:
         serializedVersion: 2
-        x: 489
-        y: 900
-        width: 16
-        height: 16
+        x: 133
+        y: 183
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_Potion
+      name: INV_Misc_Book_02
       rect:
         serializedVersion: 2
-        x: 489
-        y: 936
-        width: 16
-        height: 16
+        x: 133
+        y: 117
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_smallPotion
+      name: INV_Misc_Book_03
       rect:
         serializedVersion: 2
-        x: 489
-        y: 829
-        width: 15
-        height: 16
+        x: 133
+        y: 51
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_temp
+      name: INV_Misc_Book_04
       rect:
         serializedVersion: 2
-        x: 489
-        y: 886
-        width: 16
-        height: 12
+        x: 199
+        y: 315
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: SkillIcon1
+      name: INV_Misc_Book_05
       rect:
         serializedVersion: 2
-        x: 433
-        y: 412
-        width: 71
-        height: 71
+        x: 265
+        y: 315
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: SkillIcon2
+      name: INV_Misc_Book_06
       rect:
         serializedVersion: 2
-        x: 433
-        y: 412
-        width: 71
-        height: 71
+        x: 331
+        y: 315
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: SkillIcon3
+      name: INV_Misc_Book_07
       rect:
         serializedVersion: 2
-        x: 433
-        y: 412
-        width: 71
-        height: 71
+        x: 397
+        y: 315
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: TalentIcon1
+      name: INV_Misc_Book_08
       rect:
         serializedVersion: 2
-        x: 217
-        y: 639
-        width: 46
-        height: 46
+        x: 199
+        y: 249
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: TalentIcon2
+      name: INV_Misc_Book_09
       rect:
         serializedVersion: 2
-        x: 217
-        y: 591
-        width: 46
-        height: 46
+        x: 199
+        y: 183
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: TalentIcon3
+      name: INV_Misc_Book_10
       rect:
         serializedVersion: 2
-        x: 217
-        y: 639
-        width: 46
-        height: 46
+        x: 199
+        y: 117
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: TalentIcon4
+      name: INV_Misc_Book_11
       rect:
         serializedVersion: 2
-        x: 217
-        y: 639
-        width: 46
-        height: 46
+        x: 199
+        y: 51
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: TalentIcon5
+      name: INV_Misc_Cape_07
       rect:
         serializedVersion: 2
-        x: 217
-        y: 591
-        width: 46
-        height: 46
+        x: 265
+        y: 249
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: INV_Misc_Cape_08
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 249
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: INV_Misc_Cape_09
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 249
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: INV_Misc_Key_01
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 183
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: INV_Misc_Key_02
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 117
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: INV_Misc_Key_03
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 51
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: INV_Misc_Key_04
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 183
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

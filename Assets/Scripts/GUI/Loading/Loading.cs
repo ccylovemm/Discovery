@@ -35,7 +35,7 @@ public class Loading : Singleton<Loading>
         if (UIManager.Instance.HasView(WindowKey.UIRoot))
         {
             startGame.SetActive(false);
-            SceneManager.Instance.Enter();
+            SceneManager.Instance.EnterMap();
         }
     }
 

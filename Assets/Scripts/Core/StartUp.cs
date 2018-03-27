@@ -32,22 +32,12 @@ public class StartUp : MonoBehaviour
 
     void GameInit()
     {
-        DataManager.Init();
 #if UNITY_IOS
         Advertisement.Initialize("1740028");
 
-        AppsFlyer.setAppsFlyerKey("DTnFrbYC5f3pAdkT6o4XYJ");
-		AppsFlyer.setAppID("1360985835");
-		AppsFlyer.trackAppLaunch();
-
 #elif UNITY_ANDROID
         Advertisement.Initialize("1740027");
-
-        AppsFlyer.init("DTnFrbYC5f3pAdkT6o4XYJ");
-		AppsFlyer.setAppID ("com.PandaGames.ComboMage"); 
 #endif
-        AudioListener.pause = !DataManager.userData.IsSound;
-
         EventCenter.DispatchEvent(EventEnum.GameInitOver);
         UIManager.Instance.OpenView(WindowKey.UIRoot);
     }

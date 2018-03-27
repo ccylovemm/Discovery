@@ -18,7 +18,7 @@ public class Npc : SceneBase
     private void Update()
     {
         if (Time.frameCount % 8 != 0) return;
-        if (Vector2.Distance(transform.position, GameData.myself.currPos) - size > 0.1f)
+        if (Vector2.Distance(transform.position, GameData.myself.transform.position)> 0.1f)
         {
             if (actionItem == this)
             {
@@ -27,7 +27,7 @@ public class Npc : SceneBase
         }
         else
         {
-            if (actionItem == null || Vector2.Distance(actionItem.transform.position, GameData.myself.currPos) - actionItem.size > Vector2.Distance(transform.position, GameData.myself.currPos) - size)
+            if (actionItem == null || Vector2.Distance(actionItem.transform.position, GameData.myself.transform.position) > Vector2.Distance(transform.position, GameData.myself.transform.position))
             {
                 if (actionItem != null) actionItem.CancelAction();
                 actionItem = this;

@@ -271,6 +271,8 @@ TextureImporter:
     21300528: UI_elemListBG_circle
     21300530: UI_learnSpell_Circle
     21300532: UI_learnSpell_Plus
+    21300534: btn_castParry
+    21300536: btn_castParryClick
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -356,8 +358,8 @@ TextureImporter:
       name: Black
       rect:
         serializedVersion: 2
-        x: 1018
-        y: 935
+        x: 504
+        y: 845
         width: 4
         height: 4
       alignment: 0
@@ -366,37 +368,11 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: btn_aban_Click
+      name: btn_castParry
       rect:
         serializedVersion: 2
-        x: 446
-        y: 489
-        width: 110
-        height: 110
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_aban_Normal
-      rect:
-        serializedVersion: 2
-        x: 290
-        y: 486
-        width: 110
-        height: 110
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_cast
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 587
+        x: 186
+        y: 700
         width: 151
         height: 159
       alignment: 0
@@ -405,11 +381,11 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: btn_castClick
+      name: btn_castParryClick
       rect:
         serializedVersion: 2
-        x: 459
-        y: 762
+        x: 339
+        y: 700
         width: 151
         height: 159
       alignment: 0
@@ -421,36 +397,10 @@ TextureImporter:
       name: btn_castRange
       rect:
         serializedVersion: 2
-        x: 779
-        y: 774
+        x: 1
+        y: 840
         width: 183
         height: 183
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_castSpk_Mage
-      rect:
-        serializedVersion: 2
-        x: 765
-        y: 613
-        width: 151
-        height: 159
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_castSpkClick_Mage
-      rect:
-        serializedVersion: 2
-        x: 612
-        y: 762
-        width: 151
-        height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,8 +410,8 @@ TextureImporter:
       name: btn_castTalk
       rect:
         serializedVersion: 2
-        x: 459
-        y: 601
+        x: 1
+        y: 679
         width: 151
         height: 159
       alignment: 0
@@ -473,8 +423,8 @@ TextureImporter:
       name: btn_castTalkClick
       rect:
         serializedVersion: 2
-        x: 612
-        y: 601
+        x: 154
+        y: 539
         width: 151
         height: 159
       alignment: 0
@@ -486,8 +436,8 @@ TextureImporter:
       name: btn_castUse
       rect:
         serializedVersion: 2
-        x: 765
-        y: 452
+        x: 1
+        y: 518
         width: 151
         height: 159
       alignment: 0
@@ -499,218 +449,10 @@ TextureImporter:
       name: btn_castUseClick
       rect:
         serializedVersion: 2
-        x: 293
-        y: 598
+        x: 307
+        y: 539
         width: 151
         height: 159
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_close
-      rect:
-        serializedVersion: 2
-        x: 918
-        y: 437
-        width: 97
-        height: 101
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_closeClick
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 292
-        width: 97
-        height: 101
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_item
-      rect:
-        serializedVersion: 2
-        x: 558
-        y: 499
-        width: 96
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_itemClick
-      rect:
-        serializedVersion: 2
-        x: 656
-        y: 499
-        width: 96
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_large_Click_292x92
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 634
-        width: 121
-        height: 92
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 55, y: 0, z: 55, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_large_normal_292x92
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 540
-        width: 115
-        height: 92
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 55, y: 0, z: 55, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_OptBGM
-      rect:
-        serializedVersion: 2
-        x: 439
-        y: 427
-        width: 86
-        height: 60
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_OptBGMoff
-      rect:
-        serializedVersion: 2
-        x: 398
-        y: 365
-        width: 86
-        height: 60
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_OptFct
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 923
-        width: 387
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_OptFctClick
-      rect:
-        serializedVersion: 2
-        x: 390
-        y: 923
-        width: 387
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_OptRetreat
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 346
-        width: 26
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 10, y: 10, z: 10, w: 10}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_OptRetreatClick
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 321
-        width: 26
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 10, y: 10, z: 10, w: 10}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_OptSFX
-      rect:
-        serializedVersion: 2
-        x: 557
-        y: 334
-        width: 86
-        height: 60
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_OptSFXoff
-      rect:
-        serializedVersion: 2
-        x: 281
-        y: 330
-        width: 86
-        height: 60
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_OptShare
-      rect:
-        serializedVersion: 2
-        x: 369
-        y: 303
-        width: 86
-        height: 60
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_OptShareOff
-      rect:
-        serializedVersion: 2
-        x: 457
-        y: 295
-        width: 86
-        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -720,8 +462,8 @@ TextureImporter:
       name: btn_pad
       rect:
         serializedVersion: 2
-        x: 486
-        y: 357
+        x: 436
+        y: 469
         width: 69
         height: 68
       alignment: 0
@@ -733,8 +475,8 @@ TextureImporter:
       name: btn_padRange
       rect:
         serializedVersion: 2
-        x: 1
-        y: 748
+        x: 350
+        y: 861
         width: 161
         height: 162
       alignment: 0
@@ -746,8 +488,8 @@ TextureImporter:
       name: btn_pause
       rect:
         serializedVersion: 2
-        x: 143
-        y: 446
+        x: 130
+        y: 415
         width: 109
         height: 92
       alignment: 0
@@ -759,23 +501,10 @@ TextureImporter:
       name: btn_pauseClick
       rect:
         serializedVersion: 2
-        x: 287
-        y: 392
+        x: 1
+        y: 332
         width: 109
         height: 92
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: btn_spellEpt
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 338
-        width: 106
-        height: 106
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -785,8 +514,8 @@ TextureImporter:
       name: btnForge_Click_295x90
       rect:
         serializedVersion: 2
-        x: 164
-        y: 820
+        x: 1
+        y: 426
         width: 127
         height: 90
       alignment: 0
@@ -798,8 +527,8 @@ TextureImporter:
       name: btnForge_normal_295x90
       rect:
         serializedVersion: 2
-        x: 164
-        y: 728
+        x: 307
+        y: 447
         width: 127
         height: 90
       alignment: 0
@@ -808,156 +537,39 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_head_Oldman
+      name: Icon_creditBlueUI
       rect:
         serializedVersion: 2
-        x: 1
-        y: 395
-        width: 140
-        height: 160
+        x: 460
+        y: 650
+        width: 44
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Icon_UnknownAcc4x
+      name: Icon_creditGoldUI
       rect:
         serializedVersion: 2
-        x: 765
-        y: 907
-        width: 9
-        height: 14
+        x: 460
+        y: 604
+        width: 44
+        height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Num_criticalSign
-      rect:
-        serializedVersion: 2
-        x: 277
-        y: 702
-        width: 14
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_AccSept_483x2
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 744
-        width: 6
-        height: 2
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_BarLow
-      rect:
-        serializedVersion: 2
-        x: 1018
-        y: 971
-        width: 4
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 2, z: 1, w: 2}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_BarRestore
-      rect:
-        serializedVersion: 2
-        x: 1018
-        y: 961
-        width: 4
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 2, z: 1, w: 2}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_bossHPBar
-      rect:
-        serializedVersion: 2
-        x: 964
-        y: 894
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 3, y: 3, z: 3, w: 3}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_bossHPBG
-      rect:
-        serializedVersion: 2
-        x: 978
-        y: 981
-        width: 40
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 18, y: 18, z: 18, w: 18}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
       name: UI_creditBG
       rect:
         serializedVersion: 2
-        x: 1
-        y: 557
+        x: 154
+        y: 509
         width: 151
         height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_decoRoleName
-      rect:
-        serializedVersion: 2
-        x: 779
-        y: 959
-        width: 197
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_decoUpgradeFrame_Off
-      rect:
-        serializedVersion: 2
-        x: 978
-        y: 880
-        width: 38
-        height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_decoUpgradeFrame_on
-      rect:
-        serializedVersion: 2
-        x: 402
-        y: 497
-        width: 38
-        height: 99
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -967,8 +579,8 @@ TextureImporter:
       name: UI_diaHeadFrame
       rect:
         serializedVersion: 2
-        x: 295
-        y: 759
+        x: 186
+        y: 861
         width: 162
         height: 162
       alignment: 0
@@ -980,8 +592,8 @@ TextureImporter:
       name: UI_diaTalkBox
       rect:
         serializedVersion: 2
-        x: 918
-        y: 655
+        x: 241
+        y: 344
         width: 102
         height: 101
       alignment: 0
@@ -990,76 +602,37 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: UI_dungeonCleanBG_388x47
-      rect:
-        serializedVersion: 2
-        x: 402
-        y: 465
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 14, y: 20, z: 19, w: 8}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_elemListBG
-      rect:
-        serializedVersion: 2
-        x: 918
-        y: 554
-        width: 99
-        height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_elemListBG_circle
-      rect:
-        serializedVersion: 2
-        x: 251
-        y: 380
-        width: 28
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
       name: UI_enemyHPBar
       rect:
         serializedVersion: 2
-        x: 1018
-        y: 951
+        x: 504
+        y: 851
         width: 4
         height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 2, z: 1, w: 2}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
       name: ui_enemyHPBG
       rect:
         serializedVersion: 2
-        x: 964
-        y: 922
+        x: 492
+        y: 845
         width: 10
         height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 5, y: 5, z: 4, w: 5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
       name: UI_enterBtn
       rect:
         serializedVersion: 2
-        x: 918
-        y: 540
+        x: 112
+        y: 401
         width: 98
         height: 12
       alignment: 0
@@ -1068,364 +641,13 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: UI_enterStage_874x506
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 208
-        width: 74
-        height: 82
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 30, y: 45, z: 30, w: 30}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_enterStageBG_338x83
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 201
-        width: 61
-        height: 55
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 25, y: 25, z: 25, w: 25}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_enterStageSept
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 912
-        width: 292
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_ItemSocket_85x85
-      rect:
-        serializedVersion: 2
-        x: 271
-        y: 614
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 8, z: 8, w: 8}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_ItemStar_big_Ept
-      rect:
-        serializedVersion: 2
-        x: 254
-        y: 506
-        width: 31
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_ItemStar_big_Ful
-      rect:
-        serializedVersion: 2
-        x: 254
-        y: 472
-        width: 31
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_ItemStar_small_ept
-      rect:
-        serializedVersion: 2
-        x: 933
-        y: 760
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_ItemStar_small_ful
-      rect:
-        serializedVersion: 2
-        x: 918
-        y: 759
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_learnSpell_Circle
-      rect:
-        serializedVersion: 2
-        x: 213
-        y: 207
-        width: 63
-        height: 63
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_learnSpell_Plus
-      rect:
-        serializedVersion: 2
-        x: 271
-        y: 595
-        width: 17
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_playerEnergy_full
-      rect:
-        serializedVersion: 2
-        x: 1018
-        y: 925
-        width: 4
-        height: 2
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 1, z: 1, w: 1}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_playerEnergy_notFull
-      rect:
-        serializedVersion: 2
-        x: 1018
-        y: 921
-        width: 4
-        height: 2
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 1, z: 1, w: 1}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_playerHPBar
-      rect:
-        serializedVersion: 2
-        x: 1018
-        y: 941
-        width: 4
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 2, y: 2, z: 1, w: 2}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: ui_playerHPBG
-      rect:
-        serializedVersion: 2
-        x: 964
-        y: 938
-        width: 10
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 11, z: 4, w: 5}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
       name: UI_roldInfoTxtField_126x26
       rect:
         serializedVersion: 2
-        x: 100
-        y: 371
+        x: 154
+        y: 816
         width: 27
         height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 11, y: 10, z: 11, w: 10}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_roleBG_289x472
-      rect:
-        serializedVersion: 2
-        x: 558
-        y: 396
-        width: 90
-        height: 101
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 40, y: 45, z: 40, w: 45}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_roleInfoSep_550x26
-      rect:
-        serializedVersion: 2
-        x: 364
-        y: 275
-        width: 80
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 40, y: 0, z: 39, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_roleIntroTxtField_268x120
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 104
-        width: 52
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 22, y: 27, z: 23, w: 2}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_roleLevelStar
-      rect:
-        serializedVersion: 2
-        x: 254
-        y: 441
-        width: 29
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_roleLevelStar_Ept
-      rect:
-        serializedVersion: 2
-        x: 251
-        y: 410
-        width: 29
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_roleSkillFrame_300x140
-      rect:
-        serializedVersion: 2
-        x: 77
-        y: 224
-        width: 68
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 30, y: 13, z: 30, w: 13}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_roleSkillTxtField_295x24
-      rect:
-        serializedVersion: 2
-        x: 1018
-        y: 929
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_roleUpgradeFrameBG
-      rect:
-        serializedVersion: 2
-        x: 213
-        y: 272
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_ScrollBar
-      rect:
-        serializedVersion: 2
-        x: 964
-        y: 908
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 5, z: 4, w: 5}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_SelectedFrame_78x78
-      rect:
-        serializedVersion: 2
-        x: 964
-        y: 882
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 4, z: 4, w: 4}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_switchElement
-      rect:
-        serializedVersion: 2
-        x: 650
-        y: 367
-        width: 87
-        height: 130
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_TabAcc_off
-      rect:
-        serializedVersion: 2
-        x: 77
-        y: 156
-        width: 54
-        height: 66
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_TabAcc_on
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 140
-        width: 54
-        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1435,8 +657,8 @@ TextureImporter:
       name: UI_TabBG_off_83x201
       rect:
         serializedVersion: 2
-        x: 128
-        y: 258
+        x: 112
+        y: 321
         width: 83
         height: 78
       alignment: 0
@@ -1448,39 +670,13 @@ TextureImporter:
       name: UI_TabBG_on_83x201
       rect:
         serializedVersion: 2
-        x: 279
-        y: 250
+        x: 1
+        y: 252
         width: 83
         height: 78
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 52, y: 42, z: 30, w: 33}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_tabSpell_off
-      rect:
-        serializedVersion: 2
-        x: 964
-        y: 819
-        width: 58
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: UI_tabSpell_on
-      rect:
-        serializedVersion: 2
-        x: 964
-        y: 758
-        width: 58
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     outline: []

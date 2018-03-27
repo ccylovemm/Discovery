@@ -36,11 +36,11 @@ public class HeadBar : MonoBehaviour
         ShowMsg((value > 0 ? "+" : "") + value.ToString(), MsgTxt4);
     }
 
-    public void ReduceHp(int value , uint damageType)
+    public void ReduceHp(int value)
     {
         if (value == 0) return;
         value = Random.Range((int)(value * 0.8f) , (int)(value * 1.2f));
-        ShowMsg(value.ToString() , damageType == 0 ? MsgTxt1 : (damageType == 1 ? MsgTxt2 : MsgTxt3));
+        ShowMsg(value.ToString() , MsgTxt1);
     }
 
     private void ShowMsg(string msg , GameObject txt)

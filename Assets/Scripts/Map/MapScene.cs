@@ -229,6 +229,7 @@ public class MapScene : MonoBehaviour
         {
             MapEditorItemType mapEditorItemType = layerItems[index].items[i].itemType;
             if (mapEditorItemType == MapEditorItemType.None || mapEditorItemType == MapEditorItemType.Deco) continue;
+            mapEditorItemType = mapEditorItemType == MapEditorItemType.StoneWall ? MapEditorItemType.Wall : mapEditorItemType;
             if (itemType.ContainsKey(mapEditorItemType))
             {
                 itemType[mapEditorItemType].Add(layerItems[index].posList[i]);

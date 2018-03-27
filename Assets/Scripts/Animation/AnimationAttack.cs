@@ -13,9 +13,6 @@ public class AnimationAttack : MonoBehaviour
 
     void ExecuteAttack(int v)
     {
-        if (actorObject != null && actorObject.executeAttack != null)
-        {
-            actorObject.executeAttack();
-        }
+        actorObject.ExecuteAttack();
     }
 }
