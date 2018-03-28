@@ -124,7 +124,6 @@ public class Monster : ActorObject
                             {
                                 navMeshAgent2D.Stop();
                                 animationManager.Play(AnimationName.Attack);
-                                animationManager.SetSpeed(10);
                                 attackTime = Time.time + actorData.cfgVo.AttackInterval;
                                 yield return new WaitForSeconds(Mathf.Min(actorData.cfgVo.AttackInterval, animationManager.GetCurrTime()));
                                 animationManager.SetSpeed(1);
